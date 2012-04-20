@@ -1,0 +1,112 @@
+Store:
+  tableName:                           t_store
+  actAs:
+    SluggableExt:                      { fields: [ name ] }
+    Timestampable:
+    SoftDelete:
+  columns:
+    id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                                  }
+    customer_id:                       { type: integer  , length: 20                    , notnull: true                                                        }
+    ruc:                               { type: string   , length: 200                   , notnull: false                                                       }    
+    name:                              { type: string   , length: 200                   , notnull: true                                                        }
+    logo:                              { type: string   , length: 200                   , notnull: false                                                       }
+    phrase:                            { type: string   , length: 450                   , notnull: false                                                       }
+    info:                              { type: string   , length: 500                   , notnull: false                                                       }
+    description:                       { type: string   , length: 2000                 , notnull: false                                                        }
+    datetime:                          { type: datetime                                 , notnull: true                                                        }
+    qty_votes:                         { type: integer  , length: 20                    , notnull: false                                                       }
+    status:                            { type: string   , length: 2  , fixed: true      , notnull: true , default: PE                                          }
+  indexes:
+    u_ruc:                             { fields: [ ruc ]                              , type: unique                                                           }
+    u_name:                            { fields: [ name ]                              , type: unique                                                          }
+    i_ruc:                             { fields: [ status ]                                                                                                    }
+    i_phrase:                          { fields: { phrase: { length: 400 } }                                                                                   }
+    i_info:                            { fields: { info: { length: 100 } }                                                                                     }
+    i_datetime:                        { fields: [ datetime ]                                                                                                  }
+    i_status:                          { fields: [ status ]                                                                                                    }
+  relations:
+    Customer:                          { class: Customer    , local: customer_id   , foreign: id           , type: one , alias: Customer  , onDelete: RESTRICT, onUpdate: CASCADE }
+    Address:                           { class: Address     , local: id            , foreign: store_id     , type: many, alias: Addresses                                         }
+    Offer:                             { class: Offer       , local: id            , foreign: store_id     , type: many, alias: Offers                                            }
+    Category:                          { class: Category    , local: store_id      , foreign: category_id  , alias: Categories , refClass: StoreCategory                          }
+    Service:                           { class: Service     , local: store_id      , foreign: service_id   , alias: Services   , refClass: StoreService                           }
+  options:
+    symfony:                           { filter: false, form: true }
+    type_columns:                      [ status ]
+    
+
+Address:
+  tableName:                           t_address
+  actAs:
+    SluggableExt:                      { fields: [ street ] }
+    Timestampable:
+    Geographical:
+    SoftDelete:
+  columns:
+    id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                                  }
+    store_id:                          { type: integer  , length: 20                    , notnull: true                                                        }
+    customer_id:                       { type: integer  , length: 20                    , notnull: true                                                        }
+    city_id:                           { type: integer  , length: 20                    , notnull: true                                                        }
+    street:                            { type: string   , length: 200                   , notnull: true                                                        }
+    zip_code:                          { type: string   , length: 20                    , notnull: true                                                        }
+    phone:                             { type: string   , length: 50                    , notnull: true                                                        }
+    fax:                               { type: string   , length: 50                    , notnull: true                                                        }
+    mobile:                            { type: string   , length: 50                    , notnull: true                                                        }
+    active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 0                                           }
+  indexes:
+    i_street:                          { fields: [ street ]                                                                                                    }
+    i_active:                          { fields: [ active ]                                                                                                    }
+  relations:
+    Store:                             { class: Store     , local: store_id    , foreign: id  , type: one , alias: Store    , onDelete: RESTRICT , onUpdate: CASCADE }
+    Customer:                          { class: Customer  , local: customer_id , foreign: id  , type: one , alias: Customer , onDelete: RESTRICT , onUpdate: CASCADE }
+    City:                              { class: City      , local: city_id     , foreign: id  , type: one , alias: City     , onDelete: RESTRICT , onUpdate: CASCADE }
+    Offer:                             { class: Offer     , local: id            , foreign: address_id     , type: many, alias: Offers                               }
+  options:
+    symfony:                           { filter: false, form: true }
+    boolean_columns:                   [ active ]
+    
+    
+Offer:
+  tableName:                           t_offer
+  actAs:
+    SluggableExt:                      { fields: [ title ] }
+    Timestampable:
+  columns:
+    id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                                  }
+    store_id:                          { type: integer  , length: 20                    , notnull: true                                                        }
+    address_id:                        { type: integer  , length: 20                    , notnull: true                                                        }
+    customer_id:                       { type: integer  , length: 20                    , notnull: true                                                        }
+    title:                             { type: string   , length: 100                   , notnull: true                                                        }
+    description:                       { type: string   , length: 5000                 , notnull: false                                                        }
+    image:                             { type: string   , length: 255                                                                                          }
+    active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 0                                           }
+  indexes:
+    i_title:                           { fields: [ title ]                                                                                                     }
+  relations:
+    Address:                           { class: Address   , local: address_id  , foreign: id  , type: one , alias: Address  , onDelete: RESTRICT , onUpdate: CASCADE }
+    Customer:                          { class: Customer  , local: customer_id , foreign: id  , type: one , alias: Customer , onDelete: RESTRICT , onUpdate: CASCADE }    
+    Store:                             { class: Store     , local: store_id    , foreign: id  , type: one , alias: Store    , onDelete: RESTRICT , onUpdate: CASCADE }
+  options:
+    symfony:                           { filter: false, form: true }    
+    
+    
+Photo:
+  tableName:                 t_photo
+  actAs:
+    SluggableExt:            { fields: [ name ] }
+    Timestampable:
+    Thumbnailable:
+  columns:
+    id:                      { type: integer  , length: 20 , primary: true    , autoincrement: true                                                  }
+    store_id:                { type: integer  , length: 20                    , notnull: true                                                        }    
+    name:                    { type: string   , length: 100                   , notnull: true                                                        }
+    path:                    { type: string   , length: 255                   , notnull: true                                                        }
+    size:                    { type: integer  , length: 10                    , notnull: true , default: 0                                           }
+    full_mime:               { type: string   , length: 100                   , notnull: true                                                        }
+    rank:                    { type: integer  , length: 5                     , notnull: true , default: 0                                           }
+  indexes:
+    i_name:                  { fields: [ name ]                                                                                                      }
+  relations:
+    Store:                   { class: Store     , local: store_id    , foreign: id  , type: one , alias: Store    , onDelete: RESTRICT , onUpdate: CASCADE }
+  options:
+    symfony:                 { filter: false, form: true }    

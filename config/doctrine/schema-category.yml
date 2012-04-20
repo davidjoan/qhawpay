@@ -1,0 +1,31 @@
+Category:
+  tableName:                           t_category
+  actAs:
+    SluggableExt:                      { fields: [ name ] }
+    Timestampable:
+  columns:
+    id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                                  }
+    name:                              { type: string   , length: 100                   , notnull: true                                                        }
+    description:                       { type: string   , length: 5000                 , notnull: false                                                        }
+    image:                             { type: string   , length: 255                                                                                          }
+    active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 0                                           }
+  indexes:
+    u_name:                            { fields: [ name ]                               , type: unique                                                         }
+  relations:
+    Store:                             { class: Store             , local: category_id   , foreign: store_id  , alias: Stores, refClass: StoreCategory        }
+  options:
+    symfony:                           { filter: false, form: true }
+    
+    
+StoreCategory:
+  tableName:                           t_store_category
+  actAs:
+    Timestampable:                     { updated: { disabled: true } }
+  columns:
+    store_id:                          { type: integer  , length: 20 , primary: true                                                                           }
+    category_id:                       { type: integer  , length: 20 , primary: true                                                                           }
+  relations:
+    Store:                             { class: Store           , local: store_id      , foreign: id, type: one , alias: Store    , onDelete: CASCADE , onUpdate: CASCADE }
+    Category:                          { class: Category         , local: category_id   , foreign: id, type: one , alias: Category , onDelete: CASCADE , onUpdate: CASCADE }
+  options:
+    symfony:                           { filter: false, form: false }

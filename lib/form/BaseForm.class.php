@@ -2,12 +2,11 @@
 
 /**
  * Base project form.
- * 
- * @package    qhawpay
+ *
+ * @package    flexiwik
  * @subpackage form
- * @author     Your name here 
- * @version    SVN: $Id: BaseForm.class.php 20147 2009-07-13 11:46:57Z FabianLange $
+ * @author     David Joan Tataje Mendoza <dtataje@qhawpay.pe>
  */
-class BaseForm extends sfFormSymfony
+class BaseForm extends sfFormExt
 {
 }

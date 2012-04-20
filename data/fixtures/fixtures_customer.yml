@@ -1,0 +1,37 @@
+Customer:
+  Customer_1:
+    realname: 'David Tataje'
+    username: dtataje
+    password: 1234
+    email: dtataje@qhawpay.pe
+    url: http://qhawpay.pe
+    twitter_username: david.joan
+    about: me
+    phone: null
+    active: '1'
+    last_access_at: '2010-08-30 13:11:32'
+    is_admin: Y
+  Customer_2:
+    realname: 'Gerardo Tataje'
+    username: gtataje
+    password: 1234
+    email: gtataje@qhawpay.pe
+    url: http://qhawpay.pe
+    twitter_username: gtataje
+    about: me
+    phone: null
+    active: '1'
+    last_access_at: '2010-08-30 13:11:32'
+    is_admin: Y    
+  Customer_3:
+    realname: 'Enrrique Perez'
+    username: eperez
+    password: 1234
+    email: eperez@qhawpay.pe
+    url: http://qhawpay.pe
+    twitter_username: etataje
+    about: me
+    phone: null
+    active: '1'
+    last_access_at: '2010-08-30 13:11:32'
+    is_admin: Y        

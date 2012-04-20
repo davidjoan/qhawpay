@@ -1,0 +1,31 @@
+Service:
+  tableName:                           t_service
+  actAs:
+    SluggableExt:                      { fields: [ name ] }
+    Timestampable:
+  columns:
+    id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                                  }
+    name:                              { type: string   , length: 100                   , notnull: true                                                        }
+    description:                       { type: string   , length: 5000                 , notnull: false                                                        }
+    image:                             { type: string   , length: 255                                                                                          }
+    active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 0                                           }
+  indexes:
+    u_name:                            { fields: [ name ]                               , type: unique                                                         }
+  relations:
+    Store:                             { class: Store             , local: service_id   , foreign: store_id  , alias: Stores, refClass: StoreService           }
+  options:
+    symfony:                           { filter: false, form: true }
+    
+    
+StoreService:
+  tableName:                           t_store_service
+  actAs:
+    Timestampable:                     { updated: { disabled: true } }
+  columns:
+    store_id:                          { type: integer  , length: 20 , primary: true                                                                           }
+    service_id:                        { type: integer  , length: 20 , primary: true                                                                           }
+  relations:
+    Store:                             { class: Store           , local: store_id      , foreign: id, type: one , alias: Store    , onDelete: CASCADE , onUpdate: CASCADE }
+    Service:                           { class: Service         , local: service_id    , foreign: id, type: one , alias: Service  , onDelete: CASCADE , onUpdate: CASCADE }
+  options:
+    symfony:                           { filter: false, form: false }

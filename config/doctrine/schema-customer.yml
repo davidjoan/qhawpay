@@ -1,0 +1,41 @@
+Customer:
+  tableName:                 t_customer
+  actAs:
+    SluggableExt:            { fields: [ username ] }
+    Timestampable:
+  columns:
+    id:                      { type: integer  , length: 20 , primary: true    , autoincrement: true                                                  }
+    realname:                { type: string   , length: 200                   , notnull: true                                                        } 
+    username:                { type: string   , length: 50                    , notnull: true                                                        }
+    password:                { type: string   , length: 255                   , notnull: true                                                        }
+    date_of_birth:           { type: date                                                                                                           }
+    gender:                  { type: string   , length: 1  , fixed: true      , notnull: true                                                       } # M: masculine, F: femenine    
+    email:                   { type: string   , length: 100                   , notnull: true                                                        }
+    url:                     { type: string   , length: 255                                                                                          }
+    picture:                 { type: string   , length: 255                                                                                          }
+    about:                   { type: string   , length: 5000                                                                                         }
+    twitter_username:        { type: string   , length: 100                                                                                          }
+    phone:                   { type: string   , length: 100                                                                                          }
+    active:                  { type: string   , length: 1  , fixed: true      , notnull: true , default: 0                                           }
+    last_access_at:          { type: timestamp                                                                                                       }
+    facebook_id:             { type: string   , length: 20                                                                                           }
+    email_hash:              { type: string   , length: 255                                                                                          }
+    is_admin:                { type: string   , length: 1  , fixed: true      , notnull: true , default: N                                           }    
+  indexes:
+    i_username:              { fields: [ username ]                                                                                                  }
+    u_email:                 { fields: [ email ]                              , type: unique                                                         }
+    u_facebook_id:           { fields: [ facebook_id]                         , type: unique                                                         }    
+    i_url:                   { fields: [ url ]                                                                                                       }
+    i_twitter_username:      { fields: [ twitter_username ]                                                                                          }
+    i_active:                { fields: [ active ]                                                                                                    }
+    i_gender:                { fields: gender                                                                                                        }
+    
+    i_is_admin:              { fields: [ is_admin ]                                                                                                  }
+  relations:
+    Offer:                   { class: Offer     , local: id            , foreign: customer_id     , type: many, alias: Offers                        }
+    Store:                   { class: Store     , local: id            , foreign: customer_id     , type: many, alias: Stores                        }
+    Address:                 { class: Address   , local: id            , foreign: customer_id     , type: many, alias: Addresses                     }
+  options:
+    symfony:                 { filter: false, form: true }
+    boolean_columns:         [ active, is_admin ]
+    
