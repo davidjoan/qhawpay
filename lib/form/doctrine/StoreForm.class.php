@@ -93,14 +93,22 @@ class StoreForm extends BaseStoreForm
                                   'choices'          => $this->getTable()->getStatuss(),
                                   'expanded'         => true,
                                   'renderer_options' => array('formatter' => array($this->widgetFormatter, 'radioFormatter'))
-                                )),
-      'categories_list' => new sfWidgetFormDoctrineChoice(array
-                                (
-                                  'model' => $this->getRelatedModelName('Categories'),
-                                  'expanded' => true,
-                                  'multiple' => true,
-                                  'renderer_options' => array('formatter' => array($this->widgetFormatter, 'radioFormatter'))
-                                )),                
+                                )),   
+  	  'categories_list' => new sfWidgetFormDoctrineChoice
+                        (
+                          array
+                          (
+                            'model'            => $this->getRelatedModelName('Categories'),
+                            'multiple'         => true,
+                            'renderer_class'   => 'sfWidgetFormSelectDoubleList',
+                            'method'           => 'getName',
+                            'renderer_options' => array
+                                                  (
+                                                    'label_associated'   => 'Seleccionadas',
+                                                    'label_unassociated' => 'Disponibles'
+                                                  )
+                          )
+                        ),        
     ));            
         
     $this->setDefault('status', '1');
