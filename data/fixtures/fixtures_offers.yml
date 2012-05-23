@@ -1,0 +1,19 @@
+Offer:
+  Offer_1:
+    Store:   Store_1
+    Address: Address_1
+    Customer: Customer_1
+    title:    "2 x 1 en galletas"
+    description: "de 11 a 1:00pm  podras comprar 2 galletas rellenita por el precio de 1!"
+    image:  null
+    expiration_date: null
+    active:  1
+  Offer_2:
+    Store:   Store_1
+    Address: Address_7
+    Customer: Customer_1
+    title:    "Cerveza 4x3"
+    description: "Solo valido hasta abotar stock"
+    image:  null
+    expiration_date: null
+    active:  1

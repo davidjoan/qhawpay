@@ -1,16 +1,246 @@
-# You can find more information about this file on the symfony website:
-# http://www.symfony-project.org/reference/1_4/en/10-Routing
+######################
+########## Store #####
+######################
 
-# default rules
-homepage:
-  url:   /
-  param: { module: default, action: index }
+store_show:
+  url:             /mostrar/tienda/:slug
+  param:           { module: Store, action: show }
+  requirements:    { slug: \w+ }
 
-# generic rules
-# please, remove them by adding more specific rules
-default_index:
-  url:   /:module
-  param: { action: index }
+store_list:
+  url:             /listar/tiendas/:filter_by/:filter/:order_by/:order/:max/:page
+  param:           { module: Store, action: list, filter_by: name, filter: 0, order_by: datetime, order: d, max: 20, page: 1, rflow: on }
+  requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
+
+store_new:
+  url:             /nueva/tienda
+  param:           { module: Store, action: edit }
+
+store_edit:
+  url:             /editar/tienda/:slug
+  param:           { module: Store, action: edit }
+  requirements:    { slug: '[\w-]+' }
+
+store_delete:
+  url:             /eliminar/tienda/:slug
+  param:           { module: Store, action: delete }
+  requirements:    { slug: '[\w-,]+' }
+
+
+########################
+########## Service #####
+########################
+
+service_show:
+  url:             /mostrar/servicio/:slug
+  param:           { module: Service, action: show }
+  requirements:    { slug: \w+ }
+
+service_list:
+  url:             /listar/servicios/:filter_by/:filter/:order_by/:order/:max/:page
+  param:           { module: Service, action: list, filter_by: name, filter: 0, order_by: created_at, order: d, max: 20, page: 1, rflow: on }
+  requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
+
+service_new:
+  url:             /nuevo/servicio
+  param:           { module: Service, action: edit }
+
+service_edit:
+  url:             /editar/servicio/:slug
+  param:           { module: Service, action: edit }
+  requirements:    { slug: '[\w-]+' }
+
+service_delete:
+  url:             /eliminar/servicio/:slug
+  param:           { module: Service, action: delete }
+  requirements:    { slug: '[\w-,]+' }
+
+
+########################
+########## Customer ####
+########################
+
+customer_show:
+  url:             /mostrar/cliente/:slug
+  param:           { module: Customer, action: show }
+  requirements:    { slug: \w+ }
+
+customer_list:
+  url:             /listar/clientes/:filter_by/:filter/:order_by/:order/:max/:page
+  param:           { module: Customer, action: list, filter_by: name, filter: 0, order_by: created_at, order: d, max: 20, page: 1, rflow: on }
+  requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
+
+customer_new:
+  url:             /nuevo/cliente
+  param:           { module: Customer, action: edit }
+
+customer_edit:
+  url:             /editar/cliente/:slug
+  param:           { module: Customer, action: edit }
+  requirements:    { slug: '[\w-]+' }
+
+customer_delete:
+  url:             /eliminar/cliente/:slug
+  param:           { module: Customer, action: delete }
+  requirements:    { slug: '[\w-,]+' }
+
+########################
+########## Country #####
+########################
+
+country_show:
+  url:             /mostrar/pais/:slug
+  param:           { module: Country, action: show }
+  requirements:    { slug: \w+ }
+
+country_list:
+  url:             /listar/paises/:filter_by/:filter/:order_by/:order/:max/:page
+  param:           { module: Country, action: list, filter_by: name, filter: 0, order_by: created_at, order: d, max: 20, page: 1, rflow: on }
+  requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
+
+country_new:
+  url:             /nuevo/pais
+  param:           { module: Country, action: edit }
+
+country_edit:
+  url:             /editar/pais/:slug
+  param:           { module: Country, action: edit }
+  requirements:    { slug: '[\w-]+' }
+
+country_delete:
+  url:             /eliminar/pais/:slug
+  param:           { module: Country, action: delete }
+  requirements:    { slug: '[\w-,]+' }
+
+
+
+########################
+########## City ########
+########################
+
+city_show:
+  url:             /mostrar/ciudad/:slug
+  param:           { module: City, action: show }
+  requirements:    { slug: \w+ }
+
+city_list:
+  url:             /listar/ciudad/:filter_by/:filter/:order_by/:order/:max/:page
+  param:           { module: City, action: list, filter_by: name, filter: 0, order_by: created_at, order: d, max: 20, page: 1, rflow: on }
+  requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
+
+city_new:
+  url:             /nueva/ciudad
+  param:           { module: City, action: edit }
+
+city_edit:
+  url:             /editar/ciudad/:slug
+  param:           { module: City, action: edit }
+  requirements:    { slug: '[\w-]+' }
+
+city_delete:
+  url:             /eliminar/ciudad/:slug
+  param:           { module: City, action: delete }
+  requirements:    { slug: '[\w-,]+' }
+
+
+############################
+########## Category ########
+############################
+
+category_show:
+  url:             /mostrar/categoria/:slug
+  param:           { module: Category, action: show }
+  requirements:    { slug: \w+ }
+
+category_list:
+  url:             /listar/categorias/:filter_by/:filter/:order_by/:order/:max/:page
+  param:           { module: Category, action: list, filter_by: name, filter: 0, order_by: created_at, order: d, max: 20, page: 1, rflow: on }
+  requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
+
+category_new:
+  url:             /nueva/categoria
+  param:           { module: Category, action: edit }
+
+category_edit:
+  url:             /editar/categoria/:slug
+  param:           { module: Category, action: edit }
+  requirements:    { slug: '[\w-]+' }
+
+category_delete:
+  url:             /eliminar/categoria/:slug
+  param:           { module: Category, action: delete }
+  requirements:    { slug: '[\w-,]+' }
+
+###########################
+######### Log #############
+###########################
+
+#Log
+log_login:
+  url:             /
+  param:           { module: Log, action: login }
+  
+log_logout:
+  url:             /logout
+  param:           { module: Log, action: logout }
+
+
+
+
+
+###########################
+######### General #########
+###########################
+
+#default
+default_disabled:
+  url:             /default/disabled
+  param:           { module: default, action: disabled }
+
+default_error404:
+  url:             /default/error404
+  param:           { module: default, action: error404 }
+
+default_login:
+  url:             /default/login
+  param:           { module: default, action: login }
+
+default_secure:
+  url:             /default/secure
+  param:           { module: default, action: secure }
+
+
+
+#Error
+error_delete_error:
+  url:             /error/delete_error
+  param:           { module: Error, action: deleteError }
+
+
+
+#Generic
+generic_get_attribute_value:
+  url:             /generic/get_attribute_value
+  param:           { module: Generic, action: getAttributeValue }
+
+generic_add_dynamic_form:
+  url:             /generic/add_dynamic_form
+  param:           { module: Generic, action: addDynamicForm }
+
+generic_remove_dynamic_form:
+  url:             /generic/remove_dynamic_form
+  param:           { module: Generic, action: removeDynamicForm }
+
+
+
+#Home
+home:
+  url:             /inicio
+  param:           { module: Home, action: show }
+
+##############################
+######### Default ############
+##############################
 
 default:
-  url:   /:module/:action/*
+  url:             /:module/:action/*

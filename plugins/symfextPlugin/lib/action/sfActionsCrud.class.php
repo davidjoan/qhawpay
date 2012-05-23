@@ -117,7 +117,7 @@ abstract class sfActionsCrud extends ActionsProject
       $this->form->bind($params, $request->getFiles($this->form->getName()));
       
       if ($this->form->isValid())
-      {
+      {     
         $obj = $this->form->save();
         $this->complementSave($request);
         $this->redirect($this->getEntranceRoute());
@@ -128,6 +128,7 @@ abstract class sfActionsCrud extends ActionsProject
   /**
    * @see executeList
    */
+
   protected function complementObject(sfWebRequest $request)
   {
   }

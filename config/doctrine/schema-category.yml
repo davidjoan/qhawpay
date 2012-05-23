@@ -3,6 +3,7 @@ Category:
   actAs:
     SluggableExt:                      { fields: [ name ] }
     Timestampable:
+    SoftDelete:
   columns:
     id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                                  }
     name:                              { type: string   , length: 100                   , notnull: true                                                        }
@@ -15,6 +16,7 @@ Category:
     Store:                             { class: Store             , local: category_id   , foreign: store_id  , alias: Stores, refClass: StoreCategory        }
   options:
     symfony:                           { filter: false, form: true }
+    boolean_columns:                   [ active ]
     
     
 StoreCategory:

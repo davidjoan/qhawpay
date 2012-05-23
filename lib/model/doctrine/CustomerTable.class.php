@@ -16,4 +16,73 @@ class CustomerTable extends DoctrineTable
     {
         return Doctrine_Core::getTable('Customer');
     }
+    
+const
+    GENDER_MALE = 'M',
+    GENDER_FAME = 'F',
+    IS_ADMIN_YES = 'Y',
+    IS_ADMIN_NO  = 'N',
+    STATUS_ACTIVE = 1,
+    STATUS_INACTIVE = 0;        
+  protected static
+    $gender = array
+              (
+                self::GENDER_MALE => 'Masculino',
+                self::GENDER_FAME => 'Femenino',
+              );
+  protected static
+    $is_admin = array
+                             (
+                               self::IS_ADMIN_YES => 'Si',
+                               self::IS_ADMIN_NO => 'No',
+                             );
+                              
+  public function getGenders()
+  {
+    return self::$gender;
+  }
+  
+  public function getIsAdmin()
+  {
+    return self::$is_admin;
+  }     
+    
+
+    
+  protected static
+    $status                = array
+                             (
+                               self::STATUS_ACTIVE     => 'Si'  ,
+                               self::STATUS_INACTIVE   => 'No',
+                             );
+                             
+  public function getStatuss()
+  {
+    return self::$status;
+  }	
+  public function findOneByLowerCaseEmail($email)
+  {
+    $q = $this->createAliasQuery()
+         ->where('c.email = ?', strtolower($email));
+         
+    return $q->fetchOne();
+  }
+  
+  public function findOneByLowerCaseUsername($username)
+  {
+    $q = $this->createAliasQuery()
+         ->where('c.username = ?', strtolower($username));
+         
+    return $q->fetchOne();
+  }
+  
+    public function getPathDir()
+  {
+    return sfConfig::get('app_customer_images_dir');
+  }
+  
+  public function getImagePath()
+  {
+    return sfConfig::get('app_customer_images_path');
+  }
 }

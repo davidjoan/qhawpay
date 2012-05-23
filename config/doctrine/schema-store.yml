@@ -10,10 +10,11 @@ Store:
     ruc:                               { type: string   , length: 200                   , notnull: false                                                       }    
     name:                              { type: string   , length: 200                   , notnull: true                                                        }
     logo:                              { type: string   , length: 200                   , notnull: false                                                       }
+    url:                               { type: string   , length: 200                   , notnull: false                                                       }
     phrase:                            { type: string   , length: 450                   , notnull: false                                                       }
     info:                              { type: string   , length: 500                   , notnull: false                                                       }
     description:                       { type: string   , length: 2000                 , notnull: false                                                        }
-    datetime:                          { type: datetime                                 , notnull: true                                                        }
+    datetime:                          { type: timestamp                                 , notnull: true                                                        }
     qty_votes:                         { type: integer  , length: 20                    , notnull: false                                                       }
     status:                            { type: string   , length: 2  , fixed: true      , notnull: true , default: PE                                          }
   indexes:
@@ -28,6 +29,7 @@ Store:
     Customer:                          { class: Customer    , local: customer_id   , foreign: id           , type: one , alias: Customer  , onDelete: RESTRICT, onUpdate: CASCADE }
     Address:                           { class: Address     , local: id            , foreign: store_id     , type: many, alias: Addresses                                         }
     Offer:                             { class: Offer       , local: id            , foreign: store_id     , type: many, alias: Offers                                            }
+    Photo:                             { class: Photo       , local: id            , foreign: store_id     , type: many, alias: Photos                                            }
     Category:                          { class: Category    , local: store_id      , foreign: category_id  , alias: Categories , refClass: StoreCategory                          }
     Service:                           { class: Service     , local: store_id      , foreign: service_id   , alias: Services   , refClass: StoreService                           }
   options:
@@ -46,12 +48,14 @@ Address:
     id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                                  }
     store_id:                          { type: integer  , length: 20                    , notnull: true                                                        }
     customer_id:                       { type: integer  , length: 20                    , notnull: true                                                        }
+    country_id:                        { type: integer  , length: 20                    , notnull: true                                                        }
     city_id:                           { type: integer  , length: 20                    , notnull: true                                                        }
     street:                            { type: string   , length: 200                   , notnull: true                                                        }
-    zip_code:                          { type: string   , length: 20                    , notnull: true                                                        }
-    phone:                             { type: string   , length: 50                    , notnull: true                                                        }
-    fax:                               { type: string   , length: 50                    , notnull: true                                                        }
-    mobile:                            { type: string   , length: 50                    , notnull: true                                                        }
+    address:                           { type: string   , length: 200                   , notnull: false                                                       }
+    zip_code:                          { type: string   , length: 20                    , notnull: false                                                       }
+    phone:                             { type: string   , length: 50                    , notnull: false                                                       }
+    fax:                               { type: string   , length: 50                    , notnull: false                                                       }
+    mobile:                            { type: string   , length: 50                    , notnull: false                                                       }
     active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 0                                           }
   indexes:
     i_street:                          { fields: [ street ]                                                                                                    }
@@ -59,6 +63,7 @@ Address:
   relations:
     Store:                             { class: Store     , local: store_id    , foreign: id  , type: one , alias: Store    , onDelete: RESTRICT , onUpdate: CASCADE }
     Customer:                          { class: Customer  , local: customer_id , foreign: id  , type: one , alias: Customer , onDelete: RESTRICT , onUpdate: CASCADE }
+    Country:                           { class: Country   , local: country_id  , foreign: id  , type: one , alias: Country  , onDelete: RESTRICT , onUpdate: CASCADE }
     City:                              { class: City      , local: city_id     , foreign: id  , type: one , alias: City     , onDelete: RESTRICT , onUpdate: CASCADE }
     Offer:                             { class: Offer     , local: id            , foreign: address_id     , type: many, alias: Offers                               }
   options:
@@ -71,6 +76,7 @@ Offer:
   actAs:
     SluggableExt:                      { fields: [ title ] }
     Timestampable:
+    SoftDelete:
   columns:
     id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                                  }
     store_id:                          { type: integer  , length: 20                    , notnull: true                                                        }
@@ -80,6 +86,7 @@ Offer:
     description:                       { type: string   , length: 5000                 , notnull: false                                                        }
     image:                             { type: string   , length: 255                                                                                          }
     active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 0                                           }
+    expiration_date:                   { type: datetime }
   indexes:
     i_title:                           { fields: [ title ]                                                                                                     }
   relations:
@@ -96,6 +103,7 @@ Photo:
     SluggableExt:            { fields: [ name ] }
     Timestampable:
     Thumbnailable:
+    SoftDelete:
   columns:
     id:                      { type: integer  , length: 20 , primary: true    , autoincrement: true                                                  }
     store_id:                { type: integer  , length: 20                    , notnull: true                                                        }    

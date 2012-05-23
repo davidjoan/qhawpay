@@ -23,6 +23,7 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
       'slug'        => new sfWidgetFormInputText(),
       'created_at'  => new sfWidgetFormDateTime(),
       'updated_at'  => new sfWidgetFormDateTime(),
+      'deleted_at'  => new sfWidgetFormDateTime(),
       'stores_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Store')),
     ));
 
@@ -35,6 +36,7 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
       'slug'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'created_at'  => new sfValidatorDateTime(),
       'updated_at'  => new sfValidatorDateTime(),
+      'deleted_at'  => new sfValidatorDateTime(array('required' => false)),
       'stores_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Store', 'required' => false)),
     ));
 

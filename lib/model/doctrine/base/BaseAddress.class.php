@@ -8,8 +8,10 @@
  * @property integer $id
  * @property integer $store_id
  * @property integer $customer_id
+ * @property integer $country_id
  * @property integer $city_id
  * @property string $street
+ * @property string $address
  * @property string $zip_code
  * @property string $phone
  * @property string $fax
@@ -17,14 +19,17 @@
  * @property string $active
  * @property Store $Store
  * @property Customer $Customer
+ * @property Country $Country
  * @property City $City
  * @property Doctrine_Collection $Offers
  * 
  * @method integer             getId()          Returns the current record's "id" value
  * @method integer             getStoreId()     Returns the current record's "store_id" value
  * @method integer             getCustomerId()  Returns the current record's "customer_id" value
+ * @method integer             getCountryId()   Returns the current record's "country_id" value
  * @method integer             getCityId()      Returns the current record's "city_id" value
  * @method string              getStreet()      Returns the current record's "street" value
+ * @method string              getAddress()     Returns the current record's "address" value
  * @method string              getZipCode()     Returns the current record's "zip_code" value
  * @method string              getPhone()       Returns the current record's "phone" value
  * @method string              getFax()         Returns the current record's "fax" value
@@ -32,13 +37,16 @@
  * @method string              getActive()      Returns the current record's "active" value
  * @method Store               getStore()       Returns the current record's "Store" value
  * @method Customer            getCustomer()    Returns the current record's "Customer" value
+ * @method Country             getCountry()     Returns the current record's "Country" value
  * @method City                getCity()        Returns the current record's "City" value
  * @method Doctrine_Collection getOffers()      Returns the current record's "Offers" collection
  * @method Address             setId()          Sets the current record's "id" value
  * @method Address             setStoreId()     Sets the current record's "store_id" value
  * @method Address             setCustomerId()  Sets the current record's "customer_id" value
+ * @method Address             setCountryId()   Sets the current record's "country_id" value
  * @method Address             setCityId()      Sets the current record's "city_id" value
  * @method Address             setStreet()      Sets the current record's "street" value
+ * @method Address             setAddress()     Sets the current record's "address" value
  * @method Address             setZipCode()     Sets the current record's "zip_code" value
  * @method Address             setPhone()       Sets the current record's "phone" value
  * @method Address             setFax()         Sets the current record's "fax" value
@@ -46,6 +54,7 @@
  * @method Address             setActive()      Sets the current record's "active" value
  * @method Address             setStore()       Sets the current record's "Store" value
  * @method Address             setCustomer()    Sets the current record's "Customer" value
+ * @method Address             setCountry()     Sets the current record's "Country" value
  * @method Address             setCity()        Sets the current record's "City" value
  * @method Address             setOffers()      Sets the current record's "Offers" collection
  * 
@@ -75,6 +84,11 @@ abstract class BaseAddress extends DoctrineRecord
              'length' => 20,
              'notnull' => true,
              ));
+        $this->hasColumn('country_id', 'integer', 20, array(
+             'type' => 'integer',
+             'length' => 20,
+             'notnull' => true,
+             ));
         $this->hasColumn('city_id', 'integer', 20, array(
              'type' => 'integer',
              'length' => 20,
@@ -85,25 +99,30 @@ abstract class BaseAddress extends DoctrineRecord
              'length' => 200,
              'notnull' => true,
              ));
+        $this->hasColumn('address', 'string', 200, array(
+             'type' => 'string',
+             'length' => 200,
+             'notnull' => false,
+             ));
         $this->hasColumn('zip_code', 'string', 20, array(
              'type' => 'string',
              'length' => 20,
-             'notnull' => true,
+             'notnull' => false,
              ));
         $this->hasColumn('phone', 'string', 50, array(
              'type' => 'string',
              'length' => 50,
-             'notnull' => true,
+             'notnull' => false,
              ));
         $this->hasColumn('fax', 'string', 50, array(
              'type' => 'string',
              'length' => 50,
-             'notnull' => true,
+             'notnull' => false,
              ));
         $this->hasColumn('mobile', 'string', 50, array(
              'type' => 'string',
              'length' => 50,
-             'notnull' => true,
+             'notnull' => false,
              ));
         $this->hasColumn('active', 'string', 1, array(
              'type' => 'string',
@@ -146,6 +165,12 @@ abstract class BaseAddress extends DoctrineRecord
 
         $this->hasOne('Customer', array(
              'local' => 'customer_id',
+             'foreign' => 'id',
+             'onDelete' => 'RESTRICT',
+             'onUpdate' => 'CASCADE'));
+
+        $this->hasOne('Country', array(
+             'local' => 'country_id',
              'foreign' => 'id',
              'onDelete' => 'RESTRICT',
              'onUpdate' => 'CASCADE'));

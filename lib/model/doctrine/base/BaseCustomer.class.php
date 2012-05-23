@@ -238,7 +238,9 @@ abstract class BaseCustomer extends DoctrineRecord
              ),
              ));
         $timestampable0 = new Doctrine_Template_Timestampable();
+        $softdelete0 = new Doctrine_Template_SoftDelete();
         $this->actAs($sluggableext0);
         $this->actAs($timestampable0);
+        $this->actAs($softdelete0);
     }
 }

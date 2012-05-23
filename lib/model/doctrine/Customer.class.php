@@ -12,4 +12,42 @@
  */
 class Customer extends BaseCustomer
 {
+  public function __toString() {
+      return $this->getRealname();
+  }
+    
+  public function generatePathFilename($file)
+  {
+    return Stringkit::fixFilename($file->getOriginalName()).'_'.rand(11111, 99999).$file->getOriginalExtension();
+  }    
+  
+  public function getIsAdminName()
+  {
+  	$is_admin = $this->getTable()->getIsAdmin();
+  	return $is_admin[$this->getIsAdmin()];
+      
+  }
+  
+  public function getGenderName()
+  {  	
+  	$genders = $this->getTable()->getGenders();
+  	return $genders[$this->getGender()];
+  }
+  
+  public function getActiveStr()
+  {  	
+  	$actives = $this->getTable()->getStatuss();
+  	return $actives[$this->getActive()];
+  }  
+  
+  public function setPassword($password)
+  {
+    //$this->_set('password', kcCrypt::encrypt($password));
+    $this->_set('password', Cipher::getInstance()->encrypt($password));
+  }    
+  
+  public function getFormattedDateOfBirth($format = 'D')
+  {
+    return ($this->getDateOfBirth() == null)?'no ingresado':$this->getTable()->getDateTimeFormatter()->format($this->getDateOfBirth(), $format);
+  } 
 }

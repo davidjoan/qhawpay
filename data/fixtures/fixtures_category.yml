@@ -1,0 +1,91 @@
+Category:
+  Category_1:
+    name: Tienda
+    description: 'Siempre necesario'
+    image: 28a8ad4d7049d48bda2077fb29107a6aaaad0d0e.jpg
+    active: '1'
+    slug: tienda
+    created_at: '2012-04-21 10:44:38'
+    updated_at: '2012-05-04 02:00:38'
+    deleted_at: null
+  Category_2:
+    name: Discotecas
+    description: 'para el fin de semana.'
+    image: b7700354e9d716851a416272c1284aa5756835bb.jpg
+    active: '1'
+    slug: discotecas
+    created_at: '2012-04-21 10:44:38'
+    updated_at: '2012-05-04 02:15:16'
+    deleted_at: null
+  Category_3:
+    name: Grifo
+    description: ''
+    image: 084e3de61a826463362511b1b0d1e23239d66474.jpg
+    active: '1'
+    slug: grifo
+    created_at: '2012-04-21 10:44:38'
+    updated_at: '2012-05-04 02:01:20'
+    deleted_at: null
+  Category_4:
+    name: Pubs
+    description: ''
+    image: 0554628b29593114af65a2cd69c9c639c8dfc26f.jpg
+    active: '1'
+    slug: pubs
+    created_at: '2012-04-21 10:44:38'
+    updated_at: '2012-05-04 01:52:20'
+    deleted_at: null
+  Category_5:
+    name: Chifa
+    description: ''
+    image: eb72a4858e65c057cd8cb75d914b3367233bb219.jpg
+    active: '1'
+    slug: chifa
+    created_at: '2012-04-28 19:36:00'
+    updated_at: '2012-05-04 02:05:02'
+    deleted_at: null
+  Category_6:
+    name: Billar
+    description: 'Despues del trabajo un poco de relax.'
+    image: 75f345839ee70e5db0447bfa3a4a34e9dfaaeba5.jpg
+    active: '1'
+    slug: billar
+    created_at: '2012-04-28 19:39:15'
+    updated_at: '2012-05-04 01:44:37'
+    deleted_at: null
+  Category_7:
+    name: Cafe
+    description: 'Para una reunión importante'
+    image: 25424d7999a6cd7bb1e2cae5d13e48ede6a82f98.jpg
+    active: '1'
+    slug: cafe
+    created_at: '2012-04-28 19:39:25'
+    updated_at: '2012-05-04 01:44:59'
+    deleted_at: null
+  Category_8:
+    name: Sangucherias
+    description: ''
+    image: 123951bc14fc96d0c01060edc7e99df15a9165b7.jpg
+    active: '1'
+    slug: sangucherias
+    created_at: '2012-04-28 19:40:03'
+    updated_at: '2012-05-04 01:36:34'
+    deleted_at: null
+  Category_9:
+    name: Pizzeria
+    description: ''
+    image: 293850f6a65b7d82fc1e4ab1cee31c2e09282600.jpg
+    active: '1'
+    slug: pizzeria
+    created_at: '2012-04-28 19:40:59'
+    updated_at: '2012-05-04 02:10:12'
+    deleted_at: null
+  Category_10:
+    name: Cevicheria
+    description: 'Para los días soleados, un ceviche es tu elección'
+    image: a8b997dbac097d62b7a184c7f7ff07b814d25378.jpg
+    active: '1'
+    slug: cevicheria
+    created_at: '2012-04-28 19:42:01'
+    updated_at: '2012-05-02 18:41:03'
+    deleted_at: null

@@ -16,4 +16,21 @@ class StoreTable extends DoctrineTable
     {
         return Doctrine_Core::getTable('Store');
     }
+const
+    STATUS_PENDING = 'PE',
+    STATUS_ACTIVATED = 'AC',
+    STATUS_CANCELED = 'CA';        
+
+  protected static
+    $status = array
+              (
+                self::STATUS_PENDING => 'Pendiente',
+                self::STATUS_ACTIVATED => 'Activado',
+                self::STATUS_CANCELED => 'Cancelado',
+              );
+                              
+  public function getStatuss()
+  {
+    return self::$status;
+  }    
 }

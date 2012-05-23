@@ -16,4 +16,20 @@ class CityTable extends DoctrineTable
     {
         return Doctrine_Core::getTable('City');
     }
+    
+  const
+    STATUS_ACTIVE       = 1,
+    STATUS_INACTIVE     = 0;
+    
+  protected static
+    $status                = array
+                             (
+                               self::STATUS_ACTIVE     => 'Si'  ,
+                               self::STATUS_INACTIVE   => 'No',
+                             );
+
+  public function getStatuss()
+  {
+    return self::$status;
+  }            
 }

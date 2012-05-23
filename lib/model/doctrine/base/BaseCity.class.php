@@ -82,6 +82,12 @@ abstract class BaseCity extends DoctrineRecord
              ));
 
 
+        $this->index('i_code', array(
+             'fields' => 
+             array(
+              0 => 'code',
+             ),
+             ));
         $this->index('i_active', array(
              'fields' => 
              array(
@@ -91,6 +97,9 @@ abstract class BaseCity extends DoctrineRecord
         $this->option('symfony', array(
              'filter' => false,
              'form' => false,
+             ));
+        $this->option('boolean_columns', array(
+             0 => 'active',
              ));
     }
 
@@ -114,7 +123,9 @@ abstract class BaseCity extends DoctrineRecord
              ),
              ));
         $timestampable0 = new Doctrine_Template_Timestampable();
+        $softdelete0 = new Doctrine_Template_SoftDelete();
         $this->actAs($sluggableext0);
         $this->actAs($timestampable0);
+        $this->actAs($softdelete0);
     }
 }

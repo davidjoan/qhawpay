@@ -1,0 +1,354 @@
+Store:
+  Store_1:
+    Customer: Customer_1
+    ruc: null
+    name: 'Bodega la vecina'
+    logo: null
+    url: null
+    phrase: 'Precios mas bajos siempre'
+    info: 'creada por la señara tal el dia 1999'
+    description: 'bodega tradicional'
+    datetime: '1921-11-30 00:00:00'
+    qty_votes: '5'
+    status: AC
+    slug: bodega_la_vecina
+    created_at: '2012-04-21 10:44:39'
+    updated_at: '2012-04-24 15:20:03'
+    deleted_at: null
+  Store_3:
+    Customer: Customer_1
+    ruc: null
+    name: 'Mc Donal''s'
+    logo: null
+    url: null
+    phrase: null
+    info: null
+    description: null
+    datetime: '1920-11-30 00:00:00'
+    qty_votes: null
+    status: AC
+    slug: mc_donal_s
+    created_at: '2012-04-21 13:06:38'
+    updated_at: '2012-04-21 13:08:39'
+    deleted_at: null
+  Store_7:
+    Customer: Customer_1
+    ruc: null
+    name: 'El Parque'
+    logo: null
+    url: null
+    phrase: null
+    info: null
+    description: null
+    datetime: '1920-11-30 00:00:00'
+    qty_votes: null
+    status: AC
+    slug: el_parque
+    created_at: '2012-04-22 17:09:20'
+    updated_at: '2012-04-22 17:13:42'
+    deleted_at: null
+  Store_8:
+    Customer: Customer_1
+    ruc: null
+    name: Kasamama
+    logo: null
+    url: null
+    phrase: null
+    info: null
+    description: null
+    datetime: '1925-11-30 00:00:00'
+    qty_votes: null
+    status: AC
+    slug: kasamama
+    created_at: '2012-04-22 17:22:52'
+    updated_at: '2012-04-22 17:27:31'
+    deleted_at: null
+  Store_9:
+    Customer: Customer_1
+    ruc: null
+    name: 'La Tia Chuchuwasi'
+    logo: null
+    url: null
+    phrase: null
+    info: null
+    description: null
+    datetime: '1920-11-30 00:00:00'
+    qty_votes: null
+    status: AC
+    slug: la_tia_chuchuwasi
+    created_at: '2012-04-22 17:40:22'
+    updated_at: '2012-04-22 19:27:40'
+    deleted_at: null
+  Store_12:
+    Customer: Customer_1
+    ruc: null
+    name: 'Restaurant Marcial'
+    logo: null
+    url: null
+    phrase: null
+    info: null
+    description: null
+    datetime: '0000-00-00 00:00:00'
+    qty_votes: null
+    status: AC
+    slug: restaurant_marcial
+    created_at: '2012-04-24 01:29:22'
+    updated_at: '2012-04-24 01:30:33'
+    deleted_at: null
+  Store_13:
+    Customer: Customer_1
+    ruc: null
+    name: 'Mis Costillitas'
+    logo: null
+    url: 'http://www.miscostillitas.com/'
+    phrase: 'Ribs y Piqueos Parrilleros'
+    info: 'Juanca y Emiliano, los creadores de Mis Costillitas te dan la bienvenida a nuestro nuevo sitio web: Te invitamos a romper la rutina ofreciéndote a tu paladar'
+    description: null
+    datetime: '2006-09-30 00:00:00'
+    qty_votes: null
+    status: AC
+    slug: mis_costillitas
+    created_at: '2012-04-24 11:35:58'
+    updated_at: '2012-04-24 11:41:54'
+    deleted_at: null
+  Store_14:
+    Customer: Customer_1
+    ruc: null
+    name: 'Tienda Angamos'
+    logo: null
+    url: null
+    phrase: null
+    info: null
+    description: null
+    datetime: '0000-00-00 00:00:00'
+    qty_votes: null
+    status: AC
+    slug: tienda_angamos
+    created_at: '2012-04-24 11:46:55'
+    updated_at: '2012-04-24 11:47:52'
+    deleted_at: null
+  Store_29:
+    Customer: Customer_1
+    ruc: null
+    name: 'Los Piratas'
+    logo: null
+    url: 'http://www.restaurantelospiratas.com/'
+    phrase: null
+    info: null
+    description: null
+    datetime: '0000-00-00 00:00:00'
+    qty_votes: null
+    status: AC
+    slug: los_piratas
+    created_at: '2012-04-24 18:38:45'
+    updated_at: '2012-04-24 18:40:46'
+    deleted_at: null
+  Store_30:
+    Customer: Customer_1
+    ruc: null
+    name: 'Chicharroneria Iquitos'
+    logo: null
+    url: null
+    phrase: null
+    info: null
+    description: null
+    datetime: '0000-00-00 00:00:00'
+    qty_votes: null
+    status: AC
+    slug: chicharroneria_iquitos
+    created_at: '2012-04-25 00:46:16'
+    updated_at: '2012-04-25 00:46:16'
+    deleted_at: null
+  Store_31:
+    Customer: Customer_1
+    ruc: null
+    name: 'El Buen Recado'
+    logo: null
+    url: null
+    phrase: null
+    info: null
+    description: null
+    datetime: '0000-00-00 00:00:00'
+    qty_votes: null
+    status: AC
+    slug: el_buen_recado
+    created_at: '2012-04-25 12:01:08'
+    updated_at: '2012-04-25 12:02:05'
+    deleted_at: null
+  Store_32:
+    Customer: Customer_3
+    ruc: null
+    name: 'Tienda de Moises'
+    logo: null
+    url: null
+    phrase: null
+    info: null
+    description: null
+    datetime: '0000-00-00 00:00:00'
+    qty_votes: null
+    status: PE
+    slug: tienda_de_moises
+    created_at: '2012-04-25 19:14:24'
+    updated_at: '2012-04-25 19:14:24'
+    deleted_at: null
+  Store_33:
+    Customer: Customer_3
+    ruc: null
+    name: Starbucks
+    logo: null
+    url: null
+    phrase: null
+    info: null
+    description: null
+    datetime: '0000-00-00 00:00:00'
+    qty_votes: null
+    status: AC
+    slug: starbucks
+    created_at: '2012-04-28 17:32:51'
+    updated_at: '2012-04-28 17:32:51'
+    deleted_at: null
+    
+    
+StoreCategory:
+  StoreCategory_1_1:
+    Store: Store_1
+    Category: Category_1
+    created_at: '2012-04-24 15:20:03'
+  StoreCategory_3_2:
+    Store: Store_3
+    Category: Category_2
+    created_at: '2012-04-21 13:06:38'
+  StoreCategory_7_2:
+    Store: Store_7
+    Category: Category_2
+    created_at: '2012-04-22 17:09:20'
+  StoreCategory_8_2:
+    Store: Store_8
+    Category: Category_2
+    created_at: '2012-04-22 17:22:52'
+  StoreCategory_9_2:
+    Store: Store_9
+    Category: Category_2
+    created_at: '2012-04-22 17:40:22'
+  StoreCategory_9_4:
+    Store: Store_9
+    Category: Category_4
+    created_at: '2012-04-22 17:40:22'
+  StoreCategory_12_2:
+    Store: Store_12
+    Category: Category_2
+    created_at: '2012-04-24 01:29:22'
+  StoreCategory_13_2:
+    Store: Store_13
+    Category: Category_2
+    created_at: '2012-04-24 11:35:58'
+  StoreCategory_14_1:
+    Store: Store_14
+    Category: Category_1
+    created_at: '2012-04-24 11:46:55'
+  StoreCategory_29_2:
+    Store: Store_29
+    Category: Category_2
+    created_at: '2012-04-24 18:38:45'
+  StoreCategory_30_2:
+    Store: Store_30
+    Category: Category_2
+    created_at: '2012-04-25 00:46:16'
+  StoreCategory_31_2:
+    Store: Store_31
+    Category: Category_2
+    created_at: '2012-04-25 12:01:08'
+  StoreCategory_32_1:
+    Store: Store_32
+    Category: Category_1
+    created_at: '2012-04-25 19:14:24'
+  StoreCategory_33_1:
+    Store: Store_33
+    Category: Category_1
+    created_at: '2012-04-28 17:32:51'
+  StoreCategory_33_2:
+    Store: Store_33
+    Category: Category_2
+    created_at: '2012-04-28 17:32:51'
+StoreService:
+  StoreService_1_4:
+    Store: Store_1
+    Service: Service_4
+    created_at: '2012-04-24 15:20:03'
+  StoreService_3_3:
+    Store: Store_3
+    Service: Service_3
+    created_at: '2012-04-21 13:06:38'
+  StoreService_7_3:
+    Store: Store_7
+    Service: Service_3
+    created_at: '2012-04-22 17:09:20'
+  StoreService_7_4:
+    Store: Store_7
+    Service: Service_4
+    created_at: '2012-04-22 17:09:20'
+  StoreService_8_7:
+    Store: Store_8
+    Service: Service_7
+    created_at: '2012-04-22 17:22:52'
+  StoreService_9_3:
+    Store: Store_9
+    Service: Service_3
+    created_at: '2012-04-22 17:40:22'
+  StoreService_9_4:
+    Store: Store_9
+    Service: Service_4
+    created_at: '2012-04-22 17:40:22'
+  StoreService_12_3:
+    Store: Store_12
+    Service: Service_3
+    created_at: '2012-04-24 01:29:22'
+  StoreService_12_7:
+    Store: Store_12
+    Service: Service_7
+    created_at: '2012-04-24 01:29:22'
+  StoreService_13_3:
+    Store: Store_13
+    Service: Service_3
+    created_at: '2012-04-24 11:35:58'
+  StoreService_13_7:
+    Store: Store_13
+    Service: Service_7
+    created_at: '2012-04-24 11:35:58'
+  StoreService_14_4:
+    Store: Store_14
+    Service: Service_4
+    created_at: '2012-04-24 11:46:55'
+  StoreService_14_5:
+    Store: Store_14
+    Service: Service_5
+    created_at: '2012-04-24 11:46:55'
+  StoreService_14_6:
+    Store: Store_14
+    Service: Service_6
+    created_at: '2012-04-24 11:46:55'
+  StoreService_29_4:
+    Store: Store_29
+    Service: Service_4
+    created_at: '2012-04-24 18:38:45'
+  StoreService_29_7:
+    Store: Store_29
+    Service: Service_7
+    created_at: '2012-04-24 18:38:45'
+  StoreService_30_3:
+    Store: Store_30
+    Service: Service_3
+    created_at: '2012-04-25 00:46:16'
+  StoreService_31_3:
+    Store: Store_31
+    Service: Service_3
+    created_at: '2012-04-25 12:01:08'
+  StoreService_32_4:
+    Store: Store_32
+    Service: Service_4
+    created_at: '2012-04-25 19:14:24'
+  StoreService_33_3:
+    Store: Store_33
+    Service: Service_3
+    created_at: '2012-04-28 17:32:51'
+    

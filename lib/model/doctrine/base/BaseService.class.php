@@ -78,6 +78,9 @@ abstract class BaseService extends DoctrineRecord
              'filter' => false,
              'form' => true,
              ));
+        $this->option('boolean_columns', array(
+             0 => 'active',
+             ));
     }
 
     public function setUp()
@@ -99,7 +102,9 @@ abstract class BaseService extends DoctrineRecord
              ),
              ));
         $timestampable0 = new Doctrine_Template_Timestampable();
+        $softdelete0 = new Doctrine_Template_SoftDelete();
         $this->actAs($sluggableext0);
         $this->actAs($timestampable0);
+        $this->actAs($softdelete0);
     }
 }

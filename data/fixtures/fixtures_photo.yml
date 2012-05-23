@@ -1,0 +1,58 @@
+Photo:
+  Photo_1:
+    Store: Store_1
+    name: 'Imagen Principal'
+    path: 20d4d7c781d1f1d2c90578fd4b43fd1149829f31.jpg
+    size: '0'
+    full_mime: ''
+    rank: '0'
+    slug: imagen_principal
+    created_at: '2012-04-21 13:02:43'
+    updated_at: '2012-04-21 13:02:43'
+    deleted_at: null
+  Photo_2:
+    Store: Store_3
+    name: logo
+    path: 98323a0e4fc5111190d65b46a7609b2896b9df03.png
+    size: '0'
+    full_mime: ''
+    rank: '0'
+    slug: logo
+    created_at: '2012-04-21 13:06:38'
+    updated_at: '2012-04-21 13:06:38'
+    deleted_at: null
+  Photo_3:
+    Store: Store_13
+    name: logo
+    path: b800ec8b48faaf1aacf4e876574127bed2e00ee6.jpg
+    size: '0'
+    full_mime: ''
+    rank: '0'
+    slug: logo_1
+    created_at: '2012-05-04 17:30:00'
+    updated_at: '2012-05-04 17:30:00'
+    deleted_at: null
+  Photo_4:
+    Store: Store_13
+    name: plato
+    path: 66ac2d2e002f3de8d51bfdd7d28609cb82865c69.jpg
+    size: '0'
+    full_mime: ''
+    rank: '0'
+    slug: plato
+    created_at: '2012-05-04 17:30:00'
+    updated_at: '2012-05-04 17:30:00'
+    deleted_at: null
+  Photo_5:
+    Store: Store_13
+    name: 'costillas BBQ BB'
+    path: 6710bc9ada89631e84bdecfcc15bfb5428323667.jpg
+    size: '0'
+    full_mime: ''
+    rank: '0'
+    slug: costillas_bbq_bb
+    created_at: '2012-05-07 12:21:38'
+    updated_at: '2012-05-07 12:21:38'
+    deleted_at: null
+
+

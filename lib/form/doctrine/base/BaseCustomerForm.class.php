@@ -35,6 +35,7 @@ abstract class BaseCustomerForm extends BaseFormDoctrine
       'slug'             => new sfWidgetFormInputText(),
       'created_at'       => new sfWidgetFormDateTime(),
       'updated_at'       => new sfWidgetFormDateTime(),
+      'deleted_at'       => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
@@ -58,6 +59,7 @@ abstract class BaseCustomerForm extends BaseFormDoctrine
       'slug'             => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'created_at'       => new sfValidatorDateTime(),
       'updated_at'       => new sfValidatorDateTime(),
+      'deleted_at'       => new sfValidatorDateTime(array('required' => false)),
     ));
 
     $this->validatorSchema->setPostValidator(

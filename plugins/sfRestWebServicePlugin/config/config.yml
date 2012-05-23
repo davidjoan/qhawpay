@@ -1,0 +1,37 @@
+all:
+  protected: false
+  allowed: [127.0.0.1]
+  protectedRoute: secure
+  services:
+    customer:
+      model:  customer
+      methodForQuery: ~
+      states: ~
+    store:
+      model:  store
+      methodForQuery: ~
+      states: ~
+    address:
+      model:  address
+      methodForQuery: ~
+      states: ~
+    category:
+      model:  category
+      methodForQuery: ~
+      states: ~	  
+    service:
+      model:  service
+      methodForQuery: ~
+      states: ~	  	  
+    city:
+      model:  city
+      methodForQuery: ~
+      states: ~	  	 	  
+    country:
+      model:  country
+      methodForQuery: ~
+      states: ~
+    photo:
+      model:  photo
+      methodForQuery: ~
+      states: ~	      

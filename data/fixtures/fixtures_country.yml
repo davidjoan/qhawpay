@@ -1,0 +1,11 @@
+Country:
+  Country_1:
+    code: PER
+    name: Perú
+    description: null
+    image: null
+    active: '1'
+    slug: peru
+    created_at: '2012-04-21 10:44:37'
+    updated_at: '2012-04-21 10:44:37'
+    deleted_at: null

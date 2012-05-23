@@ -1,0 +1,271 @@
+Address:
+  Address_1:
+    Store: Store_1
+    Customer: Customer_1
+    Country: Country_1
+    City: City_1
+    street: Array
+    address: 'Ampliacion Oeste Mz P2 Lte 15, Lima 036, Perú'
+    zip_code: 'lima 36'
+    phone: 392-6855
+    fax: 392-6855
+    mobile: '997280378'
+    active: '1'
+    slug: array
+    created_at: '2012-04-21 10:44:39'
+    updated_at: '2012-05-10 12:48:53'
+    latitude: '-11.955028780110'
+    longitude: '-76.998367309570'
+    deleted_at: null
+  Address_7:
+    Store: Store_3
+    Customer: Customer_1
+    Country: Country_1
+    City: City_1
+    street: Array
+    address: 'Proceres de la Independencia, San Juan de Lurigancho, Peru'
+    zip_code: 'lima 36'
+    phone: '3926855'
+    fax: '3926855'
+    mobile: '3926855'
+    active: '1'
+    slug: array_2
+    created_at: '2012-04-21 13:06:38'
+    updated_at: '2012-04-22 17:35:39'
+    latitude: '-12.006465200000'
+    longitude: '-77.005511800000'
+    deleted_at: null
+  Address_9:
+    Store: Store_7
+    Customer: Customer_1
+    Country: Country_1
+    City: City_1
+    street: Array
+    address: 'Garcilaso De La Vega, Lima District 15001, Peru'
+    zip_code: null
+    phone: null
+    fax: null
+    mobile: null
+    active: '1'
+    slug: array_1
+    created_at: '2012-04-22 17:09:20'
+    updated_at: '2012-04-22 17:38:13'
+    latitude: '-12.057136600000'
+    longitude: '-77.038055400000'
+    deleted_at: null
+  Address_10:
+    Store: Store_8
+    Customer: Customer_1
+    Country: Country_1
+    City: City_1
+    street: Array
+    address: 'Huancayo, Lima District 15046, Peru'
+    zip_code: null
+    phone: null
+    fax: null
+    mobile: null
+    active: '1'
+    slug: array_3
+    created_at: '2012-04-22 17:22:52'
+    updated_at: '2012-04-22 17:36:40'
+    latitude: '-12.062004700000'
+    longitude: '-77.038372600000'
+    deleted_at: null
+  Address_11:
+    Store: Store_9
+    Customer: Customer_1
+    Country: Country_1
+    City: City_1
+    street: Array
+    address: 'Iquique, Breña 15082, Peru'
+    zip_code: null
+    phone: null
+    fax: null
+    mobile: null
+    active: '1'
+    slug: array_4
+    created_at: '2012-04-22 17:40:22'
+    updated_at: '2012-04-22 19:27:40'
+    latitude: '-12.052724900000'
+    longitude: '-77.043969800000'
+    deleted_at: null
+  Address_12:
+    Store: Store_12
+    Customer: Customer_1
+    Country: Country_1
+    City: City_1
+    street: Array
+    address: 'Elemer Faucett, San Miguel 15088, Perú'
+    zip_code: null
+    phone: null
+    fax: null
+    mobile: null
+    active: '1'
+    slug: array_6
+    created_at: '2012-04-24 01:29:22'
+    updated_at: '2012-04-24 01:30:33'
+    latitude: '-12.068509500000'
+    longitude: '-77.097861700000'
+    deleted_at: null
+  Address_14:
+    Store: Store_13
+    Customer: Customer_1
+    Country: Country_1
+    City: City_1
+    street: Array
+    address: 'Enrique Palacios, Lima 15074, Perú'
+    zip_code: null
+    phone: 714-9094
+    fax: null
+    mobile: null
+    active: '0'
+    slug: array_9
+    created_at: '2012-04-24 11:35:58'
+    updated_at: '2012-05-10 12:55:03'
+    latitude: '-12.118886536202'
+    longitude: '-77.061023712158'
+    deleted_at: null
+  Address_15:
+    Store: Store_13
+    Customer: Customer_1
+    Country: Country_1
+    City: City_1
+    street: Array
+    address: 'Av. Aviación Nº 4236  Lima Perú'
+    zip_code: null
+    phone: 714-9091
+    fax: null
+    mobile: null
+    active: '1'
+    slug: array_10
+    created_at: '2012-04-24 11:35:58'
+    updated_at: '2012-04-24 11:42:44'
+    latitude: '-12.065698700000'
+    longitude: '-77.012174300000'
+    deleted_at: null
+  Address_18:
+    Store: Store_13
+    Customer: Customer_1
+    Country: Country_1
+    City: City_1
+    street: Array
+    address: 'Av. Caminos de Inca Nº1609, Chacarilla, Surco,Lima Perú'
+    zip_code: null
+    phone: null
+    fax: null
+    mobile: null
+    active: '0'
+    slug: array_12
+    created_at: '2012-04-24 11:41:54'
+    updated_at: '2012-04-24 11:42:44'
+    latitude: '-12.150000000000'
+    longitude: '-77.016666700000'
+    deleted_at: null
+  Address_20:
+    Store: Store_14
+    Customer: Customer_1
+    Country: Country_1
+    City: City_1
+    street: Array
+    address: 'E De Habich, Miraflores 15075, Perú'
+    zip_code: null
+    phone: null
+    fax: null
+    mobile: null
+    active: '1'
+    slug: array_14
+    created_at: '2012-04-24 11:46:55'
+    updated_at: '2012-04-24 11:47:52'
+    latitude: '-12.112658200000'
+    longitude: '-77.035765300000'
+    deleted_at: null
+  Address_22:
+    Store: Store_29
+    Customer: Customer_1
+    Country: Country_1
+    City: City_1
+    street: Array
+    address: 'Av. Aramburu 872-874 - Surquillo'
+    zip_code: null
+    phone: 637-1208
+    fax: null
+    mobile: null
+    active: '1'
+    slug: array_15
+    created_at: '2012-04-24 18:38:45'
+    updated_at: '2012-04-24 18:40:46'
+    latitude: '-12.102700400000'
+    longitude: '-77.025527400000'
+    deleted_at: null
+  Address_23:
+    Store: Store_30
+    Customer: Customer_1
+    Country: Country_1
+    City: City_1
+    street: Array
+    address: 'Iquitos, Lince 15046, Perú'
+    zip_code: null
+    phone: null
+    fax: null
+    mobile: null
+    active: '1'
+    slug: array_16
+    created_at: '2012-04-25 00:46:16'
+    updated_at: '2012-04-25 00:46:16'
+    latitude: '-12.080182300000'
+    longitude: '-77.028616000000'
+    deleted_at: null
+  Address_24:
+    Store: Store_31
+    Customer: Customer_1
+    Country: Country_1
+    City: City_1
+    street: Array
+    address: 'Angamos Oeste, Lima 15074, Perú'
+    zip_code: null
+    phone: null
+    fax: null
+    mobile: null
+    active: '1'
+    slug: array_17
+    created_at: '2012-04-25 12:01:09'
+    updated_at: '2012-04-25 12:01:09'
+    latitude: '-12.114166114087'
+    longitude: '-77.032624483109'
+    deleted_at: null
+  Address_25:
+    Store: Store_32
+    Customer: Customer_3
+    Country: Country_1
+    City: City_1
+    street: Array
+    address: 'Calle 2, Lima District 15304, Peru'
+    zip_code: null
+    phone: null
+    fax: null
+    mobile: null
+    active: '0'
+    slug: array_18
+    created_at: '2012-04-25 19:14:24'
+    updated_at: '2012-04-25 19:14:24'
+    latitude: '-11.967337400000'
+    longitude: '-77.070580100000'
+    deleted_at: null
+  Address_26:
+    Store: Store_33
+    Customer: Customer_3
+    Country: Country_1
+    City: City_1
+    street: Array
+    address: 'Bolivia, Lima 15001, Perú'
+    zip_code: null
+    phone: null
+    fax: null
+    mobile: null
+    active: '1'
+    slug: array_19
+    created_at: '2012-04-28 17:32:51'
+    updated_at: '2012-04-28 17:32:51'
+    latitude: '-12.055823400000'
+    longitude: '-77.036486900000'
+    deleted_at: null

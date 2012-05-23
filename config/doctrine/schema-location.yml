@@ -3,6 +3,7 @@ Country:
   actAs:
     SluggableExt:                   { fields: [ name ] }
     Timestampable:
+    SoftDelete:
   columns:
     id:                             { type: integer  , length: 20 , primary: true    , autoincrement: true                                                 }
     code:                           { type: string   , length: 5                     , notnull: true                                                       }
@@ -18,12 +19,14 @@ Country:
     City:                           { class: City              , local: id                    , foreign: country_id        , type: many                , alias: Cities  }
   options:
     symfony:                           { filter: false, form: false }    
+    boolean_columns:                   [ active ]
 
 City:
   tableName:                        t_city
   actAs:
     SluggableExt:                   { fields: [ name ] }
     Timestampable:
+    SoftDelete:
   columns:
     id:                             { type: integer  , length: 20 , primary: true    , autoincrement: true                                                 }
     country_id:                     { type: integer  , length: 20                    , notnull: true                                                       }
@@ -33,9 +36,11 @@ City:
     image:                          { type: string   , length: 255                                                                                         }
     active:                         { type: string   , length: 1  , fixed: true      , notnull: true , default: 0                                          }
   indexes:
+    i_code:                         { fields: [ code   ]                                                                                                   }
     i_active:                       { fields: [ active ]                                                                                                   }
   relations:
     Country:                        { class: Country           , local: country_id            , foreign: id                , type: one                 , alias: Country           , onDelete: RESTRICT, onUpdate: CASCADE }
     Address:                        { class: Address           , local: id                    , foreign: city_id        , type: many                , alias: Addresses                                                    }
   options:
     symfony:                           { filter: false, form: false }
+    boolean_columns:                   [ active ]

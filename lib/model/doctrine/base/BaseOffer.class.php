@@ -13,32 +13,35 @@
  * @property string $description
  * @property string $image
  * @property string $active
+ * @property datetime $expiration_date
  * @property Address $Address
  * @property Customer $Customer
  * @property Store $Store
  * 
- * @method integer  getId()          Returns the current record's "id" value
- * @method integer  getStoreId()     Returns the current record's "store_id" value
- * @method integer  getAddressId()   Returns the current record's "address_id" value
- * @method integer  getCustomerId()  Returns the current record's "customer_id" value
- * @method string   getTitle()       Returns the current record's "title" value
- * @method string   getDescription() Returns the current record's "description" value
- * @method string   getImage()       Returns the current record's "image" value
- * @method string   getActive()      Returns the current record's "active" value
- * @method Address  getAddress()     Returns the current record's "Address" value
- * @method Customer getCustomer()    Returns the current record's "Customer" value
- * @method Store    getStore()       Returns the current record's "Store" value
- * @method Offer    setId()          Sets the current record's "id" value
- * @method Offer    setStoreId()     Sets the current record's "store_id" value
- * @method Offer    setAddressId()   Sets the current record's "address_id" value
- * @method Offer    setCustomerId()  Sets the current record's "customer_id" value
- * @method Offer    setTitle()       Sets the current record's "title" value
- * @method Offer    setDescription() Sets the current record's "description" value
- * @method Offer    setImage()       Sets the current record's "image" value
- * @method Offer    setActive()      Sets the current record's "active" value
- * @method Offer    setAddress()     Sets the current record's "Address" value
- * @method Offer    setCustomer()    Sets the current record's "Customer" value
- * @method Offer    setStore()       Sets the current record's "Store" value
+ * @method integer  getId()              Returns the current record's "id" value
+ * @method integer  getStoreId()         Returns the current record's "store_id" value
+ * @method integer  getAddressId()       Returns the current record's "address_id" value
+ * @method integer  getCustomerId()      Returns the current record's "customer_id" value
+ * @method string   getTitle()           Returns the current record's "title" value
+ * @method string   getDescription()     Returns the current record's "description" value
+ * @method string   getImage()           Returns the current record's "image" value
+ * @method string   getActive()          Returns the current record's "active" value
+ * @method datetime getExpirationDate()  Returns the current record's "expiration_date" value
+ * @method Address  getAddress()         Returns the current record's "Address" value
+ * @method Customer getCustomer()        Returns the current record's "Customer" value
+ * @method Store    getStore()           Returns the current record's "Store" value
+ * @method Offer    setId()              Sets the current record's "id" value
+ * @method Offer    setStoreId()         Sets the current record's "store_id" value
+ * @method Offer    setAddressId()       Sets the current record's "address_id" value
+ * @method Offer    setCustomerId()      Sets the current record's "customer_id" value
+ * @method Offer    setTitle()           Sets the current record's "title" value
+ * @method Offer    setDescription()     Sets the current record's "description" value
+ * @method Offer    setImage()           Sets the current record's "image" value
+ * @method Offer    setActive()          Sets the current record's "active" value
+ * @method Offer    setExpirationDate()  Sets the current record's "expiration_date" value
+ * @method Offer    setAddress()         Sets the current record's "Address" value
+ * @method Offer    setCustomer()        Sets the current record's "Customer" value
+ * @method Offer    setStore()           Sets the current record's "Store" value
  * 
  * @package    qhawpay
  * @subpackage model
@@ -92,6 +95,9 @@ abstract class BaseOffer extends DoctrineRecord
              'notnull' => true,
              'default' => 0,
              ));
+        $this->hasColumn('expiration_date', 'datetime', null, array(
+             'type' => 'datetime',
+             ));
 
 
         $this->index('i_title', array(
@@ -134,7 +140,9 @@ abstract class BaseOffer extends DoctrineRecord
              ),
              ));
         $timestampable0 = new Doctrine_Template_Timestampable();
+        $softdelete0 = new Doctrine_Template_SoftDelete();
         $this->actAs($sluggableext0);
         $this->actAs($timestampable0);
+        $this->actAs($softdelete0);
     }
 }

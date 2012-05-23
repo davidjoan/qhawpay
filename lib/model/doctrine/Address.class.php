@@ -12,4 +12,25 @@
  */
 class Address extends BaseAddress
 {
+    public function getDescripcion()
+    {
+        $services_string = array();
+        $categories_string = array();
+        $services = $this->getStore()->getServices();
+        $categories = $this->getStore()->getCategories();
+        
+        foreach($services as $key => $service)
+        {
+            $services_string[$key] = $service->getName();
+        }
+        
+        foreach($categories as $key2 => $category)
+        {
+            $categories_string[$key2] = $category->getName();
+        }
+        //Deb::print_r_pre($categories_string);
+        //Deb::print_r_pre($services_string);
+        
+        return sprintf('<b>%s</b><br/>Dirección: %s<br/>Servicios: %s<br/>Categorias: %s',$this->getStore()->getName(),$this->getAddress(),implode(",", $services_string),implode(",", $categories_string) );
+    }
 }

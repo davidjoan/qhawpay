@@ -26,8 +26,8 @@ abstract class sfUserExt extends sfBasicSecurityUser
   {
     parent::initialize($dispatcher, $storage, $options);
     
-    $this->datetimeFormatter = new sfDateFormat($this->culture);
-    $this->numberFormatter   = new sfNumberFormat($this->culture);
+    $this->datetimeFormatter = new sfDateFormatExt($this->culture);
+    $this->numberFormatter   = new sfNumberFormatExt($this->culture);
   }
   
   /**
@@ -83,6 +83,8 @@ abstract class sfUserExt extends sfBasicSecurityUser
     $class = new ReflectionClass('ActionsProject');
     foreach ($class->getConstants() as $name => $value)
     {
+     //Deb::print_r_pre($name);
+     echo ' ';
       if (substr($name, -9) == 'NAMESPACE')
       {
         $this->getAttributeHolder()->removeNamespace($value);

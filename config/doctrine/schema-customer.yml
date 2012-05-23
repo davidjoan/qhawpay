@@ -3,6 +3,7 @@ Customer:
   actAs:
     SluggableExt:            { fields: [ username ] }
     Timestampable:
+    SoftDelete:
   columns:
     id:                      { type: integer  , length: 20 , primary: true    , autoincrement: true                                                  }
     realname:                { type: string   , length: 200                   , notnull: true                                                        } 
@@ -29,7 +30,6 @@ Customer:
     i_twitter_username:      { fields: [ twitter_username ]                                                                                          }
     i_active:                { fields: [ active ]                                                                                                    }
     i_gender:                { fields: gender                                                                                                        }
-    
     i_is_admin:              { fields: [ is_admin ]                                                                                                  }
   relations:
     Offer:                   { class: Offer     , local: id            , foreign: customer_id     , type: many, alias: Offers                        }

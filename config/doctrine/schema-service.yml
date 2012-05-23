@@ -3,6 +3,7 @@ Service:
   actAs:
     SluggableExt:                      { fields: [ name ] }
     Timestampable:
+    SoftDelete:
   columns:
     id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                                  }
     name:                              { type: string   , length: 100                   , notnull: true                                                        }
@@ -15,7 +16,7 @@ Service:
     Store:                             { class: Store             , local: service_id   , foreign: store_id  , alias: Stores, refClass: StoreService           }
   options:
     symfony:                           { filter: false, form: true }
-    
+    boolean_columns:                   [ active ]
     
 StoreService:
   tableName:                           t_store_service

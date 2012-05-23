@@ -10,45 +10,48 @@
  * @property string $ruc
  * @property string $name
  * @property string $logo
+ * @property string $url
  * @property string $phrase
  * @property string $info
  * @property string $description
- * @property datetime $datetime
+ * @property timestamp $datetime
  * @property integer $qty_votes
  * @property string $status
  * @property Customer $Customer
  * @property Doctrine_Collection $Addresses
  * @property Doctrine_Collection $Offers
+ * @property Doctrine_Collection $Photos
  * @property Doctrine_Collection $Categories
  * @property Doctrine_Collection $Services
  * @property Doctrine_Collection $StoreCategory
  * @property Doctrine_Collection $StoreService
- * @property Doctrine_Collection $Photo
  * 
  * @method integer             getId()            Returns the current record's "id" value
  * @method integer             getCustomerId()    Returns the current record's "customer_id" value
  * @method string              getRuc()           Returns the current record's "ruc" value
  * @method string              getName()          Returns the current record's "name" value
  * @method string              getLogo()          Returns the current record's "logo" value
+ * @method string              getUrl()           Returns the current record's "url" value
  * @method string              getPhrase()        Returns the current record's "phrase" value
  * @method string              getInfo()          Returns the current record's "info" value
  * @method string              getDescription()   Returns the current record's "description" value
- * @method datetime            getDatetime()      Returns the current record's "datetime" value
+ * @method timestamp           getDatetime()      Returns the current record's "datetime" value
  * @method integer             getQtyVotes()      Returns the current record's "qty_votes" value
  * @method string              getStatus()        Returns the current record's "status" value
  * @method Customer            getCustomer()      Returns the current record's "Customer" value
  * @method Doctrine_Collection getAddresses()     Returns the current record's "Addresses" collection
  * @method Doctrine_Collection getOffers()        Returns the current record's "Offers" collection
+ * @method Doctrine_Collection getPhotos()        Returns the current record's "Photos" collection
  * @method Doctrine_Collection getCategories()    Returns the current record's "Categories" collection
  * @method Doctrine_Collection getServices()      Returns the current record's "Services" collection
  * @method Doctrine_Collection getStoreCategory() Returns the current record's "StoreCategory" collection
  * @method Doctrine_Collection getStoreService()  Returns the current record's "StoreService" collection
- * @method Doctrine_Collection getPhoto()         Returns the current record's "Photo" collection
  * @method Store               setId()            Sets the current record's "id" value
  * @method Store               setCustomerId()    Sets the current record's "customer_id" value
  * @method Store               setRuc()           Sets the current record's "ruc" value
  * @method Store               setName()          Sets the current record's "name" value
  * @method Store               setLogo()          Sets the current record's "logo" value
+ * @method Store               setUrl()           Sets the current record's "url" value
  * @method Store               setPhrase()        Sets the current record's "phrase" value
  * @method Store               setInfo()          Sets the current record's "info" value
  * @method Store               setDescription()   Sets the current record's "description" value
@@ -58,11 +61,11 @@
  * @method Store               setCustomer()      Sets the current record's "Customer" value
  * @method Store               setAddresses()     Sets the current record's "Addresses" collection
  * @method Store               setOffers()        Sets the current record's "Offers" collection
+ * @method Store               setPhotos()        Sets the current record's "Photos" collection
  * @method Store               setCategories()    Sets the current record's "Categories" collection
  * @method Store               setServices()      Sets the current record's "Services" collection
  * @method Store               setStoreCategory() Sets the current record's "StoreCategory" collection
  * @method Store               setStoreService()  Sets the current record's "StoreService" collection
- * @method Store               setPhoto()         Sets the current record's "Photo" collection
  * 
  * @package    qhawpay
  * @subpackage model
@@ -100,6 +103,11 @@ abstract class BaseStore extends DoctrineRecord
              'length' => 200,
              'notnull' => false,
              ));
+        $this->hasColumn('url', 'string', 200, array(
+             'type' => 'string',
+             'length' => 200,
+             'notnull' => false,
+             ));
         $this->hasColumn('phrase', 'string', 450, array(
              'type' => 'string',
              'length' => 450,
@@ -115,8 +123,8 @@ abstract class BaseStore extends DoctrineRecord
              'length' => 2000,
              'notnull' => false,
              ));
-        $this->hasColumn('datetime', 'datetime', null, array(
-             'type' => 'datetime',
+        $this->hasColumn('datetime', 'timestamp', null, array(
+             'type' => 'timestamp',
              'notnull' => true,
              ));
         $this->hasColumn('qty_votes', 'integer', 20, array(
@@ -209,6 +217,10 @@ abstract class BaseStore extends DoctrineRecord
              'local' => 'id',
              'foreign' => 'store_id'));
 
+        $this->hasMany('Photo as Photos', array(
+             'local' => 'id',
+             'foreign' => 'store_id'));
+
         $this->hasMany('Category as Categories', array(
              'refClass' => 'StoreCategory',
              'local' => 'store_id',
@@ -224,10 +236,6 @@ abstract class BaseStore extends DoctrineRecord
              'foreign' => 'store_id'));
 
         $this->hasMany('StoreService', array(
-             'local' => 'id',
-             'foreign' => 'store_id'));
-
-        $this->hasMany('Photo', array(
              'local' => 'id',
              'foreign' => 'store_id'));
 

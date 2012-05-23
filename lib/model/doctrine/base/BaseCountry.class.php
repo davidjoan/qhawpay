@@ -12,6 +12,7 @@
  * @property string $image
  * @property string $active
  * @property Doctrine_Collection $Cities
+ * @property Doctrine_Collection $Address
  * 
  * @method integer             getId()          Returns the current record's "id" value
  * @method string              getCode()        Returns the current record's "code" value
@@ -20,6 +21,7 @@
  * @method string              getImage()       Returns the current record's "image" value
  * @method string              getActive()      Returns the current record's "active" value
  * @method Doctrine_Collection getCities()      Returns the current record's "Cities" collection
+ * @method Doctrine_Collection getAddress()     Returns the current record's "Address" collection
  * @method Country             setId()          Sets the current record's "id" value
  * @method Country             setCode()        Sets the current record's "code" value
  * @method Country             setName()        Sets the current record's "name" value
@@ -27,6 +29,7 @@
  * @method Country             setImage()       Sets the current record's "image" value
  * @method Country             setActive()      Sets the current record's "active" value
  * @method Country             setCities()      Sets the current record's "Cities" collection
+ * @method Country             setAddress()     Sets the current record's "Address" collection
  * 
  * @package    qhawpay
  * @subpackage model
@@ -95,12 +98,19 @@ abstract class BaseCountry extends DoctrineRecord
              'filter' => false,
              'form' => false,
              ));
+        $this->option('boolean_columns', array(
+             0 => 'active',
+             ));
     }
 
     public function setUp()
     {
         parent::setUp();
         $this->hasMany('City as Cities', array(
+             'local' => 'id',
+             'foreign' => 'country_id'));
+
+        $this->hasMany('Address', array(
              'local' => 'id',
              'foreign' => 'country_id'));
 
@@ -111,7 +121,9 @@ abstract class BaseCountry extends DoctrineRecord
              ),
              ));
         $timestampable0 = new Doctrine_Template_Timestampable();
+        $softdelete0 = new Doctrine_Template_SoftDelete();
         $this->actAs($sluggableext0);
         $this->actAs($timestampable0);
+        $this->actAs($softdelete0);
     }
 }

@@ -12,4 +12,9 @@
  */
 class Store extends BaseStore
 {
+  public function getStatusStr()
+  {  	
+  	$actives = $this->getTable()->getStatuss();
+  	return $actives[$this->getStatus()];
+  }      
 }
