@@ -19,13 +19,13 @@ class StoreActions extends ActionsCrud
   
   protected function complementSave(sfWebRequest $request)
   {
-  $app_id = '20171';
+ /* $app_id = '20171';
   $key = '4ded5044b87e670d3d50';
   $secret = '40e68b23d3eae75ceac7';
     $pusher = new Pusher($key, $secret, $app_id);
     $data["message"] = sprintf("Una nuevo point a sido registrado");
     $data["id"] = $this->form->getObject()->getId();
     $data["name"] = $this->form->getObject()->getName();
-    $pusher->trigger('qhawpay', 'notificaciones',$data );
+    $pusher->trigger('qhawpay', 'notificaciones',$data );*/
   }
 }

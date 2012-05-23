@@ -23,8 +23,10 @@
  * @property Doctrine_Collection $Photos
  * @property Doctrine_Collection $Categories
  * @property Doctrine_Collection $Services
+ * @property Doctrine_Collection $Tags
  * @property Doctrine_Collection $StoreCategory
  * @property Doctrine_Collection $StoreService
+ * @property Doctrine_Collection $StoreTag
  * 
  * @method integer             getId()            Returns the current record's "id" value
  * @method integer             getCustomerId()    Returns the current record's "customer_id" value
@@ -44,8 +46,10 @@
  * @method Doctrine_Collection getPhotos()        Returns the current record's "Photos" collection
  * @method Doctrine_Collection getCategories()    Returns the current record's "Categories" collection
  * @method Doctrine_Collection getServices()      Returns the current record's "Services" collection
+ * @method Doctrine_Collection getTags()          Returns the current record's "Tags" collection
  * @method Doctrine_Collection getStoreCategory() Returns the current record's "StoreCategory" collection
  * @method Doctrine_Collection getStoreService()  Returns the current record's "StoreService" collection
+ * @method Doctrine_Collection getStoreTag()      Returns the current record's "StoreTag" collection
  * @method Store               setId()            Sets the current record's "id" value
  * @method Store               setCustomerId()    Sets the current record's "customer_id" value
  * @method Store               setRuc()           Sets the current record's "ruc" value
@@ -64,8 +68,10 @@
  * @method Store               setPhotos()        Sets the current record's "Photos" collection
  * @method Store               setCategories()    Sets the current record's "Categories" collection
  * @method Store               setServices()      Sets the current record's "Services" collection
+ * @method Store               setTags()          Sets the current record's "Tags" collection
  * @method Store               setStoreCategory() Sets the current record's "StoreCategory" collection
  * @method Store               setStoreService()  Sets the current record's "StoreService" collection
+ * @method Store               setStoreTag()      Sets the current record's "StoreTag" collection
  * 
  * @package    qhawpay
  * @subpackage model
@@ -231,11 +237,20 @@ abstract class BaseStore extends DoctrineRecord
              'local' => 'store_id',
              'foreign' => 'service_id'));
 
+        $this->hasMany('Tag as Tags', array(
+             'refClass' => 'StoreTag',
+             'local' => 'store_id',
+             'foreign' => 'tag_id'));
+
         $this->hasMany('StoreCategory', array(
              'local' => 'id',
              'foreign' => 'store_id'));
 
         $this->hasMany('StoreService', array(
+             'local' => 'id',
+             'foreign' => 'store_id'));
+
+        $this->hasMany('StoreTag', array(
              'local' => 'id',
              'foreign' => 'store_id'));
 

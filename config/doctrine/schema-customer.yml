@@ -35,6 +35,7 @@ Customer:
     Offer:                   { class: Offer     , local: id            , foreign: customer_id     , type: many, alias: Offers                        }
     Store:                   { class: Store     , local: id            , foreign: customer_id     , type: many, alias: Stores                        }
     Address:                 { class: Address   , local: id            , foreign: customer_id     , type: many, alias: Addresses                     }
+    Photo:                   { class: Photo     , local: id            , foreign: customer_id     , type: many, alias: Photos                        }
   options:
     symfony:                 { filter: false, form: true }
     boolean_columns:         [ active, is_admin ]

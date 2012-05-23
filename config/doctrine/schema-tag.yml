@@ -1,0 +1,28 @@
+Tag:
+  tableName:                           t_tag
+  actAs:
+    SluggableExt:                      { fields: [ name ] }
+    Timestampable:
+  columns:
+    id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                                  }
+    name:                              { type: string   , length: 100                   , notnull: true                                                        }
+  indexes:
+    u_name:                            { fields: [ name ]                               , type: unique                                                         }
+  relations:
+    Store:                             { class: Store             , local: tag_id   , foreign: store_id  , alias: Stores, refClass: StoreTag        }
+  options:
+    symfony:                           { filter: false, form: true }
+    
+    
+StoreTag:
+  tableName:                           t_store_tag
+  actAs:
+    Timestampable:                     { updated: { disabled: true } }
+  columns:
+    store_id:                          { type: integer  , length: 20 , primary: true                                                                          }
+    tag_id:                            { type: integer  , length: 20 , primary: true                                                                          }
+  relations:
+    Store:                             { class: Store       , local: store_id , foreign: id, type: one , alias: Store , onDelete: CASCADE , onUpdate: CASCADE }
+    Tag:                               { class: Tag         , local: tag_id   , foreign: id, type: one , alias: Tag   , onDelete: CASCADE , onUpdate: CASCADE }
+  options:
+    symfony:                           { filter: false, form: false }

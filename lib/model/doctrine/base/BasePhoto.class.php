@@ -7,29 +7,47 @@
  * 
  * @property integer $id
  * @property integer $store_id
+ * @property integer $customer_id
  * @property string $name
+ * @property string $content
  * @property string $path
  * @property integer $size
  * @property string $full_mime
  * @property integer $rank
+ * @property string $ip
+ * @property string $agent
+ * @property string $approved
  * @property Store $Store
+ * @property Customer $Customer
  * 
- * @method integer getId()        Returns the current record's "id" value
- * @method integer getStoreId()   Returns the current record's "store_id" value
- * @method string  getName()      Returns the current record's "name" value
- * @method string  getPath()      Returns the current record's "path" value
- * @method integer getSize()      Returns the current record's "size" value
- * @method string  getFullMime()  Returns the current record's "full_mime" value
- * @method integer getRank()      Returns the current record's "rank" value
- * @method Store   getStore()     Returns the current record's "Store" value
- * @method Photo   setId()        Sets the current record's "id" value
- * @method Photo   setStoreId()   Sets the current record's "store_id" value
- * @method Photo   setName()      Sets the current record's "name" value
- * @method Photo   setPath()      Sets the current record's "path" value
- * @method Photo   setSize()      Sets the current record's "size" value
- * @method Photo   setFullMime()  Sets the current record's "full_mime" value
- * @method Photo   setRank()      Sets the current record's "rank" value
- * @method Photo   setStore()     Sets the current record's "Store" value
+ * @method integer  getId()          Returns the current record's "id" value
+ * @method integer  getStoreId()     Returns the current record's "store_id" value
+ * @method integer  getCustomerId()  Returns the current record's "customer_id" value
+ * @method string   getName()        Returns the current record's "name" value
+ * @method string   getContent()     Returns the current record's "content" value
+ * @method string   getPath()        Returns the current record's "path" value
+ * @method integer  getSize()        Returns the current record's "size" value
+ * @method string   getFullMime()    Returns the current record's "full_mime" value
+ * @method integer  getRank()        Returns the current record's "rank" value
+ * @method string   getIp()          Returns the current record's "ip" value
+ * @method string   getAgent()       Returns the current record's "agent" value
+ * @method string   getApproved()    Returns the current record's "approved" value
+ * @method Store    getStore()       Returns the current record's "Store" value
+ * @method Customer getCustomer()    Returns the current record's "Customer" value
+ * @method Photo    setId()          Sets the current record's "id" value
+ * @method Photo    setStoreId()     Sets the current record's "store_id" value
+ * @method Photo    setCustomerId()  Sets the current record's "customer_id" value
+ * @method Photo    setName()        Sets the current record's "name" value
+ * @method Photo    setContent()     Sets the current record's "content" value
+ * @method Photo    setPath()        Sets the current record's "path" value
+ * @method Photo    setSize()        Sets the current record's "size" value
+ * @method Photo    setFullMime()    Sets the current record's "full_mime" value
+ * @method Photo    setRank()        Sets the current record's "rank" value
+ * @method Photo    setIp()          Sets the current record's "ip" value
+ * @method Photo    setAgent()       Sets the current record's "agent" value
+ * @method Photo    setApproved()    Sets the current record's "approved" value
+ * @method Photo    setStore()       Sets the current record's "Store" value
+ * @method Photo    setCustomer()    Sets the current record's "Customer" value
  * 
  * @package    qhawpay
  * @subpackage model
@@ -52,9 +70,19 @@ abstract class BasePhoto extends DoctrineRecord
              'length' => 20,
              'notnull' => true,
              ));
+        $this->hasColumn('customer_id', 'integer', 20, array(
+             'type' => 'integer',
+             'length' => 20,
+             'notnull' => true,
+             ));
         $this->hasColumn('name', 'string', 100, array(
              'type' => 'string',
              'length' => 100,
+             'notnull' => true,
+             ));
+        $this->hasColumn('content', 'string', 5000, array(
+             'type' => 'string',
+             'length' => 5000,
              'notnull' => true,
              ));
         $this->hasColumn('path', 'string', 255, array(
@@ -79,12 +107,38 @@ abstract class BasePhoto extends DoctrineRecord
              'notnull' => true,
              'default' => 0,
              ));
+        $this->hasColumn('ip', 'string', 100, array(
+             'type' => 'string',
+             'length' => 100,
+             'notnull' => true,
+             ));
+        $this->hasColumn('agent', 'string', 255, array(
+             'type' => 'string',
+             'length' => 255,
+             'notnull' => true,
+             ));
+        $this->hasColumn('approved', 'string', 1, array(
+             'type' => 'string',
+             'length' => 1,
+             'fixed' => 1,
+             'notnull' => true,
+             'default' => 0,
+             ));
 
 
         $this->index('i_name', array(
              'fields' => 
              array(
               0 => 'name',
+             ),
+             ));
+        $this->index('i_content', array(
+             'fields' => 
+             array(
+              'content' => 
+              array(
+              'length' => 200,
+              ),
              ),
              ));
         $this->option('symfony', array(
@@ -98,6 +152,12 @@ abstract class BasePhoto extends DoctrineRecord
         parent::setUp();
         $this->hasOne('Store', array(
              'local' => 'store_id',
+             'foreign' => 'id',
+             'onDelete' => 'RESTRICT',
+             'onUpdate' => 'CASCADE'));
+
+        $this->hasOne('Customer', array(
+             'local' => 'customer_id',
              'foreign' => 'id',
              'onDelete' => 'RESTRICT',
              'onUpdate' => 'CASCADE'));

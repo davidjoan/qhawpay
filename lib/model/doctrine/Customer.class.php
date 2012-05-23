@@ -44,7 +44,7 @@ class Customer extends BaseCustomer
   {
     //$this->_set('password', kcCrypt::encrypt($password));
     $this->_set('password', Cipher::getInstance()->encrypt($password));
-  }    
+  }
   
   public function getFormattedDateOfBirth($format = 'D')
   {

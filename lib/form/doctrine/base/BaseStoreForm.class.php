@@ -33,6 +33,7 @@ abstract class BaseStoreForm extends BaseFormDoctrine
       'deleted_at'      => new sfWidgetFormDateTime(),
       'categories_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Category')),
       'services_list'   => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Service')),
+      'tags_list'       => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Tag')),
     ));
 
     $this->setValidators(array(
@@ -54,6 +55,7 @@ abstract class BaseStoreForm extends BaseFormDoctrine
       'deleted_at'      => new sfValidatorDateTime(array('required' => false)),
       'categories_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Category', 'required' => false)),
       'services_list'   => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Service', 'required' => false)),
+      'tags_list'       => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Tag', 'required' => false)),
     ));
 
     $this->validatorSchema->setPostValidator(
@@ -92,12 +94,18 @@ abstract class BaseStoreForm extends BaseFormDoctrine
       $this->setDefault('services_list', $this->object->Services->getPrimaryKeys());
     }
 
+    if (isset($this->widgetSchema['tags_list']))
+    {
+      $this->setDefault('tags_list', $this->object->Tags->getPrimaryKeys());
+    }
+
   }
 
   protected function doSave($con = null)
   {
     $this->saveCategoriesList($con);
     $this->saveServicesList($con);
+    $this->saveTagsList($con);
 
     parent::doSave($con);
   }
@@ -175,6 +183,44 @@ abstract class BaseStoreForm extends BaseFormDoctrine
     if (count($link))
     {
       $this->object->link('Services', array_values($link));
+    }
+  }
+
+  public function saveTagsList($con = null)
+  {
+    if (!$this->isValid())
+    {
+      throw $this->getErrorSchema();
+    }
+
+    if (!isset($this->widgetSchema['tags_list']))
+    {
+      // somebody has unset this widget
+      return;
+    }
+
+    if (null === $con)
+    {
+      $con = $this->getConnection();
+    }
+
+    $existing = $this->object->Tags->getPrimaryKeys();
+    $values = $this->getValue('tags_list');
+    if (!is_array($values))
+    {
+      $values = array();
+    }
+
+    $unlink = array_diff($existing, $values);
+    if (count($unlink))
+    {
+      $this->object->unlink('Tags', array_values($unlink));
+    }
+
+    $link = array_diff($values, $existing);
+    if (count($link))
+    {
+      $this->object->link('Tags', array_values($link));
     }
   }
 

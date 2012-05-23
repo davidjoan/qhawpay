@@ -1,6 +1,7 @@
 Photo:
   Photo_1:
     Store: Store_1
+    Customer: Customer_1
     name: 'Imagen Principal'
     path: 20d4d7c781d1f1d2c90578fd4b43fd1149829f31.jpg
     size: '0'
@@ -12,6 +13,7 @@ Photo:
     deleted_at: null
   Photo_2:
     Store: Store_3
+    Customer: Customer_1
     name: logo
     path: 98323a0e4fc5111190d65b46a7609b2896b9df03.png
     size: '0'
@@ -23,6 +25,7 @@ Photo:
     deleted_at: null
   Photo_3:
     Store: Store_13
+    Customer: Customer_1
     name: logo
     path: b800ec8b48faaf1aacf4e876574127bed2e00ee6.jpg
     size: '0'
@@ -34,6 +37,7 @@ Photo:
     deleted_at: null
   Photo_4:
     Store: Store_13
+    Customer: Customer_1
     name: plato
     path: 66ac2d2e002f3de8d51bfdd7d28609cb82865c69.jpg
     size: '0'
@@ -45,6 +49,7 @@ Photo:
     deleted_at: null
   Photo_5:
     Store: Store_13
+    Customer: Customer_1
     name: 'costillas BBQ BB'
     path: 6710bc9ada89631e84bdecfcc15bfb5428323667.jpg
     size: '0'

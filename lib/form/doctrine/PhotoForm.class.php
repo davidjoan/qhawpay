@@ -7,6 +7,7 @@
  * @subpackage form
  * @author     David Joan Tataje Mendoza <dtataje@qhawpay.pe>
  * @version    SVN: $Id: sfDoctrineFormTemplate.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
+ * There is missing dependant extensions
  */
 class PhotoForm extends BasePhotoForm
 {    
@@ -21,6 +22,7 @@ class PhotoForm extends BasePhotoForm
   
   public function configure()
   {
+    $this->getObject()->setCustomerId(sfContext::getInstance()->getUser()->getUserId());      
     $this->setWidgets(array
     (
       'id'                   => new sfWidgetFormInputHidden(),
@@ -55,16 +57,24 @@ class PhotoForm extends BasePhotoForm
     (
       'id'                      => '=',
       'store_id'                => '-',
+      'customer_id'             => '-',
       'name'                    => 'text',
+      'content'                 => '-',
       'path'                    => 'file',
       'size'                    => '-',
       'full_mime'               => '-',
       'rank'                    => '-',
+      'ip'                      => '-',
+      'agent'                   => '-',
+      'approved'                   => '-',
       'slug'                    => '-',
       'created_at'              => '-',
-      'updated_at'              => '-'
+      'updated_at'              => '-',
+      'deleted_at'              => '-',
     );
     
         $this->validatorSchema['name']->setOption('required', false); 
+        $this->validatorSchema['ip']->setOption('required', false); 
+        $this->validatorSchema['agent']->setOption('required', false); 
   }
 }

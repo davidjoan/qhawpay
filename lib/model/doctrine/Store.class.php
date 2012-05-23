@@ -17,4 +17,8 @@ class Store extends BaseStore
   	$actives = $this->getTable()->getStatuss();
   	return $actives[$this->getStatus()];
   }      
+  public function setQtyVotes($qty)
+  {
+    $this->_set('qty_votes', (int)$this->getQtyVotes() + (int)$qty);
+  }
 }

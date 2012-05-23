@@ -25,6 +25,7 @@
  * @property Doctrine_Collection $Offers
  * @property Doctrine_Collection $Stores
  * @property Doctrine_Collection $Addresses
+ * @property Doctrine_Collection $Photos
  * 
  * @method integer             getId()               Returns the current record's "id" value
  * @method string              getRealname()         Returns the current record's "realname" value
@@ -46,6 +47,7 @@
  * @method Doctrine_Collection getOffers()           Returns the current record's "Offers" collection
  * @method Doctrine_Collection getStores()           Returns the current record's "Stores" collection
  * @method Doctrine_Collection getAddresses()        Returns the current record's "Addresses" collection
+ * @method Doctrine_Collection getPhotos()           Returns the current record's "Photos" collection
  * @method Customer            setId()               Sets the current record's "id" value
  * @method Customer            setRealname()         Sets the current record's "realname" value
  * @method Customer            setUsername()         Sets the current record's "username" value
@@ -66,6 +68,7 @@
  * @method Customer            setOffers()           Sets the current record's "Offers" collection
  * @method Customer            setStores()           Sets the current record's "Stores" collection
  * @method Customer            setAddresses()        Sets the current record's "Addresses" collection
+ * @method Customer            setPhotos()           Sets the current record's "Photos" collection
  * 
  * @package    qhawpay
  * @subpackage model
@@ -228,6 +231,10 @@ abstract class BaseCustomer extends DoctrineRecord
              'foreign' => 'customer_id'));
 
         $this->hasMany('Address as Addresses', array(
+             'local' => 'id',
+             'foreign' => 'customer_id'));
+
+        $this->hasMany('Photo as Photos', array(
              'local' => 'id',
              'foreign' => 'customer_id'));
 

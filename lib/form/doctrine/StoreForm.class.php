@@ -30,12 +30,15 @@ class StoreForm extends BaseStoreForm
       'url'             => 'url',      
       'status'          => 'Estado',
       'categories_list' => 'Categorias',
-      'services_list'   => 'Servicios Ofrecidos'      
+      'services_list'   => 'Servicios Ofrecidos',
+      'tags_list'       => 'Tags',
     );
   }    
   public function configure()
   {
-  	$this->setWidgets(array
+    $options = array(0 => 'Malo', 1 => 'Pesimo', 2 => 'Promedio', 3 => 'Mediano', 4 => 'Muy Bueno', 5 => 'Excelente');
+
+    $this->setWidgets(array
     (
       'id'                   => new sfWidgetFormInputHidden(),
       'customer_id'          => new sfWidgetFormDoctrineChoice(array
@@ -45,6 +48,14 @@ class StoreForm extends BaseStoreForm
                                 )),
       'ruc'                  => new sfWidgetFormInputText(array(), array('size' => 11, 'maxlength' => 11)),
       'name'                 => new sfWidgetFormInputText(array(), array('size' => '40')),
+      'qty_votes'            => new mpWidgetFormChoiceRating( array('choices' => $options ) ),
+      'tags_list' => new sfWidgetFormDoctrineChoice(array
+                                (
+                                  'model' => $this->getRelatedModelName('Tags'),
+                                  'expanded' => true,
+                                  'multiple' => true,
+                                  'renderer_options' => array('formatter' => array($this->widgetFormatter, 'radioFormatter'))
+                                )),                      
       'logo'                 => new sfWidgetFormInputFileEditable
                                 (
                                   array
@@ -76,7 +87,7 @@ class StoreForm extends BaseStoreForm
                                   'year_start' => 1920,
                                   'year_end' => date('Y'),
                                 )),
-      'qty_votes'            => new sfWidgetFormInputText(array(), array('size' => 5)),            
+      //'qty_votes'            => new sfWidgetFormInputText(array(), array('size' => 5)),            
       'status'               => new sfWidgetFormChoice(array
                                 (
                                   'choices'          => $this->getTable()->getStatuss(),
@@ -123,7 +134,8 @@ class StoreForm extends BaseStoreForm
       'updated_at'      => '-',
       'deleted_at'      => '-',
       'categories_list' => 'list',
-      'services_list'   => 'list' 
+      'services_list'   => 'list',
+      'tags_list'       => 'list'
     );
   
     $this->validatorSchema['datetime']->setOption('required', false); 
