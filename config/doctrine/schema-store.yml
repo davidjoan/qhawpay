@@ -110,14 +110,14 @@ Photo:
     store_id:                { type: integer  , length: 20                    , notnull: true                                                        }    
     customer_id:             { type: integer  , length: 20                    , notnull: true                                                        }
     name:                    { type: string   , length: 100                   , notnull: true                                                        }
-    content:                 { type: string   , length: 5000                  , notnull: true                                                       }
+    content:                 { type: string   , length: 5000                  , notnull: true                                                        }
     path:                    { type: string   , length: 255                   , notnull: true                                                        }
     size:                    { type: integer  , length: 10                    , notnull: true , default: 0                                           }
     full_mime:               { type: string   , length: 100                   , notnull: true                                                        }
     rank:                    { type: integer  , length: 5                     , notnull: true , default: 0                                           }
     ip:                      { type: string   , length: 100                   , notnull: true                                                        }
     agent:                   { type: string   , length: 255                   , notnull: true                                                        }
-    approved:                { type: string   , length: 1  , fixed: true      , notnull: true, default: 0                                            }    
+    approved:                { type: string   , length: 1  , fixed: true      , notnull: true, default: 0                                            }
   indexes:
     i_name:                  { fields: [ name ]                                                                                                      }
     i_content:               { fields: { content: { length: 200 } }                                                                                  }

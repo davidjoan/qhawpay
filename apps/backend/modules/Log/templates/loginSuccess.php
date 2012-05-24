@@ -1,8 +1,6 @@
 <h1>Bienvenidos al Administrador de Contenidos</h1>
 <hr/>
 <br/><br/>
-<?php //echo kcCrypt::encrypt('1234') ?>
-
 <?php include_component('Generic', 'form', array
       (
         'form'          => $form,

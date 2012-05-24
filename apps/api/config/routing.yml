@@ -1,3 +1,21 @@
+comment:
+  url:             /comment.:sf_format
+  param:           { module: Photo, action: comment, sf_format: xml }
+  class:           sfRequestRoute
+  requirements:    { sf_method: POST }
+
+register:
+  url:             /register.:sf_format
+  param:           { module: Customer, action: register, sf_format: xml }
+  class:           sfRequestRoute
+  requirements:    { sf_method: POST }
+
+login:
+  url:             /login.:sf_format
+  param:           { module: Customer, action: login, sf_format: xml }
+  class:           sfRequestRoute
+  requirements:    { sf_method: POST }
+
 store_service_list:
   url:             /store/service/:filter_by/:filter/:order_by/:order/:max/:page.:sf_format
   param:           { module: StoreService, action: list, filter_by: service_id, filter: 0, order_by: created_at, order: d, max: 20, page: 1, sf_format: xml }
