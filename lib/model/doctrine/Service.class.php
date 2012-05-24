@@ -15,5 +15,11 @@ class Service extends BaseService
   public function generatePathFilename($file)
   {
     return Stringkit::fixFilename($file->getOriginalName()).'_'.rand(11111, 99999).$file->getOriginalExtension();
-  }        
+  }  
+  
+  public function getStatusStr()
+  {  	
+  	$actives = $this->getTable()->getStatuss();
+  	return $actives[$this->getActive()];
+  }   
 }

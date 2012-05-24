@@ -40,3 +40,10 @@ all:
     param:
       cache_key_use_vary_headers: true
       cache_key_use_host_name:    true
+  user:
+    class:                   UserBackend
+    param:
+      timeout:               1800
+      logging:               %SF_LOGGING_ENABLED%
+      use_flash:             true
+      default_culture:       es_PE

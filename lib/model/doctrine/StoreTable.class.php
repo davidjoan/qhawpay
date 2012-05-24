@@ -32,5 +32,28 @@ const
   public function getStatuss()
   {
     return self::$status;
-  }    
+  }
+  
+  public function updateQueryForList(DoctrineQuery $q, $params)
+  {
+      if($params['category_id'] <> null)
+      {
+      $q = DoctrineQuery::create()->select('s.*')
+              ->from('StoreCategory sc')
+              ->innerJoin('sc.Store s')
+              ->innerJoin('sc.Category c')
+              ->where('c.id = ?', $params['category_id'])
+              ->limit(100);
+      }
+      
+      if($params['service_id'] <> null)
+      {
+      $q = DoctrineQuery::create()->select('s.*')
+              ->from('StoreService sse')
+              ->innerJoin('sse.Store s')
+              ->innerJoin('sse.Service se')
+              ->where('se.id = ?', $params['service_id'])
+              ->limit(100);
+      }
+  }
 }

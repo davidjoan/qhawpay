@@ -22,5 +22,7 @@ abstract class ActionsProject extends sfActionsExt
     OFFER_NAMESPACE              = 'Offer',
     PHOTO_NAMESPACE              = 'Photo',
     SERVICE_NAMESPACE            = 'Service',
-    STORE_NAMESPACE              = 'Store';
+    STORE_NAMESPACE              = 'Store',
+    STORE_SERVICE_NAMESPACE      = 'StoreService',
+    STORE_CATEGORY_NAMESPACE     = 'StoreCategory';
 }

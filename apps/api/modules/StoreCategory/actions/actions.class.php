@@ -1,13 +1,14 @@
 <?php
 
 /**
- * Service actions.
+ * StoreCategory actions.
  *
  * @package    qhawpay
- * @subpackage Service
+ * @subpackage StoreCategory
  * @author     David Joan Tataje Mendoza <dtataje@qhawpay.pe>
  * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
-class ServiceActions extends ActionsRestCrud
+class StoreCategoryActions extends ActionsRestCrud
 {
+
 }

@@ -1,5 +1,54 @@
-# You can find more information about this file on the symfony website:
-# http://www.symfony-project.org/reference/1_4/en/10-Routing
+store_service_list:
+  url:             /store/service/:filter_by/:filter/:order_by/:order/:max/:page.:sf_format
+  param:           { module: StoreService, action: list, filter_by: service_id, filter: 0, order_by: created_at, order: d, max: 20, page: 1, sf_format: xml }
+  class:           sfRequestRoute
+  requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+, sf_method: GET }
+
+
+
+store_category_list:
+  url:             /store/category/:filter_by/:filter/:order_by/:order/:max/:page.:sf_format
+  param:           { module: StoreCategory, action: list, filter_by: category_id, filter: 0, order_by: created_at, order: d, max: 20, page: 1, sf_format: xml }
+  class:           sfRequestRoute
+  requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+, sf_method: GET }
+
+
+#######################
+########## Store ######
+#######################
+
+store_show:
+  url:             /store/:slug.:sf_format
+  param:           { module: Store, action: show, sf_format: xml }
+  class:           sfRequestRoute
+  requirements:    { slug: \w+, sf_method: GET }
+
+store_list:
+  url:             /store/:filter_by/:filter/:order_by/:order/:max/:page.:sf_format
+  param:           { module: Store, action: list, filter_by: name, filter: 0, order_by: created_at, order: d, max: 20, page: 1, sf_format: xml }
+  class:           sfRequestRoute
+  requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+, sf_method: GET }
+
+
+
+#########################
+########## Service ######
+#########################
+
+service_show:
+  url:             /service/:slug.:sf_format
+  param:           { module: Service, action: show, sf_format: xml }
+  class:           sfRequestRoute
+  requirements:    { slug: \w+, sf_method: GET }
+
+service_list:
+  url:             /service/:filter_by/:filter/:order_by/:order/:max/:page.:sf_format
+  param:           { module: Service, action: list, filter_by: name, filter: 0, order_by: created_at, order: d, max: 20, page: 1, sf_format: xml }
+  class:           sfRequestRoute
+  requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+, sf_method: GET }
+
+
+
 #########################
 ########## Photo ########
 #########################

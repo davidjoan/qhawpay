@@ -10,15 +10,19 @@
  * @author     David Joan Tataje Mendoza <dtataje@qhawpay.pe>
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
-class Store extends BaseStore
-{
-  public function getStatusStr()
-  {  	
-  	$actives = $this->getTable()->getStatuss();
-  	return $actives[$this->getStatus()];
-  }      
-  public function setQtyVotes($qty)
-  {
-    $this->_set('qty_votes', (int)$this->getQtyVotes() + (int)$qty);
-  }
+class Store extends BaseStore {
+
+    public function getStatusStr() {
+        $actives = $this->getTable()->getStatuss();
+        return $actives[$this->getStatus()];
+    }
+
+    public function setQtyVotes($qty) {
+        $this->_set('qty_votes', (int) $this->getQtyVotes() + (int) $qty);
+    }
+
+    public function getFormattedDatetime($format = 'D') {
+        return $this->getDatetime();
+    }
+
 }
