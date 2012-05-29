@@ -61,33 +61,14 @@
 			cloudmadeAttribution = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade',
 			cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18, attribution: cloudmadeAttribution});
 
-		map.setView(new L.LatLng(51.505, -0.09), 13).addLayer(cloudmade);
+		map.setView(new L.LatLng(-12.045, -77.031), 13).addLayer(cloudmade);
 
 
-		var markerLocation = new L.LatLng(51.5, -0.09),
+		var markerLocation = new L.LatLng(-12.045, -77.031),
 			marker = new L.Marker(markerLocation);
 
 		map.addLayer(marker);
-		marker.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-
-
-		var circleLocation = new L.LatLng(51.508, -0.11),
-			circleOptions = {color: '#f03', opacity: 0.7},
-			circle = new L.Circle(circleLocation, 500, circleOptions);
-
-		circle.bindPopup("I am a circle.");
-		map.addLayer(circle);
-
-
-		var p1 = new L.LatLng(51.509, -0.08),
-			p2 = new L.LatLng(51.503, -0.06),
-			p3 = new L.LatLng(51.51, -0.047),
-			polygonPoints = [p1, p2, p3],
-			polygon = new L.Polygon(polygonPoints);
-
-		polygon.bindPopup("I am a polygon.");
-		map.addLayer(polygon);
-
+		marker.bindPopup("<b>Mejor Point de la semana!</b><br />Restaurante Mis Costillitas.").openPopup();
 
 		map.on('click', onMapClick);
 
@@ -97,7 +78,7 @@
 			var latlngStr = '(' + e.latlng.lat.toFixed(3) + ', ' + e.latlng.lng.toFixed(3) + ')';
 
 			popup.setLatLng(e.latlng);
-			popup.setContent("You clicked the map at " + latlngStr);
+			popup.setContent("Hiciste Click en el mapa " + latlngStr);
 			map.openPopup(popup);
 		}
 	</script>
