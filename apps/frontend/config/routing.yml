@@ -1,16 +1,17 @@
-# You can find more information about this file on the symfony website:
-# http://www.symfony-project.org/reference/1_4/en/10-Routing
+##############################
+######### Default ############
+##############################
+panel_index:
+  url:             /panel
+  param:           { module: Panel, action: index }
 
-# default rules
+login_facebook:
+  url:             /login/facebook/*
+  param:           { module: Log, action: loginFacebook }
+
 homepage:
-  url:   /
-  param: { module: default, action: index }
-
-# generic rules
-# please, remove them by adding more specific rules
-default_index:
-  url:   /:module
-  param: { action: index }
+  url:             /
+  param:           { module: Home, action: index }
 
 default:
-  url:   /:module/:action/*
+  url:             /:module/:action/*

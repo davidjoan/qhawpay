@@ -11,6 +11,7 @@
 class CustomerActions extends sfActions {
 
     public function executeLogin(sfWebRequest $request) {
+        header('Access-Control-Allow-Origin: *');
         if ($request->isMethod('post')) {
             $username = $request->getParameter("username");
             $password = $request->getParameter("password");
