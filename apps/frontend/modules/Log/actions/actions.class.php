@@ -13,7 +13,7 @@ class LogActions extends sfActions {
     public function executeLoginFacebook(sfWebRequest $request) {
         $app_id = "292360694186351";
         $app_secret = "0b654a8d070a63539b470d19be441677";
-        $my_url = "http://localhost:8589/login/facebook";
+        $my_url = "http://qhawpay.pe/login/facebook";
         $code = $request->getParameter("code");
         $state = $request->getParameter("state");
 
