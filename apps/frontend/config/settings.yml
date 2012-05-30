@@ -35,7 +35,7 @@ all:
     escaping_method:        ESC_SPECIALCHARS
 
     standard_helpers:       [ Cache, JavascriptBase, Partial, FormExt, Toolkit, UrlExt ]
-    enabled_modules:        [ Crud, Error, Generic, Pager, sfDependentSelectAuto ]
+    enabled_modules:        [ Crud, Error, Generic, Pager, sfDependentSelectAuto, sfGoogleLogin ]
 
     use_database:           true
     

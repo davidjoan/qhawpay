@@ -23,7 +23,7 @@ class UserFrontend extends UserProject
   
   public function updateUserLastAccess()
   {
-    $user = Doctrine::getTable('Patient')->find($this->getUserId());
+    $user = Doctrine::getTable('Customer')->find($this->getUserId());
     if ($user)
     {
       // not using the date formatter because this method can be called before the formatter exists

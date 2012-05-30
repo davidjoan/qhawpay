@@ -7,8 +7,11 @@
                 <nav id="main-nav" class="grid_6">
                     <ul>
                         <li>
+                            <?php include_component( 'sfGoogleLogin', 'link' ); ?>
+                        </li>
+                        <li>
                             <div id="social-register" class="registration_panel">
-                                <a id="facebook-login" class="fb_button fb_button_medium" href="/frontend_dev.php/login/facebook">
+                                <a id="facebook-login" class="fb_button fb_button_medium" href="/login/facebook">
                                     <span class="fb_button_text">Login with Facebook</span>
                                 </a>
                             </div>
