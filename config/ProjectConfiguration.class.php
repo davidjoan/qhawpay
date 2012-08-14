@@ -16,8 +16,7 @@ class ProjectConfiguration extends sfProjectConfigurationExt
              'sfDoctrinePlugin',
              'symfextPlugin',
              'sfRestWebServicePlugin',
-             'mpStarRatingPlugin',
-             'sfGoogleLoginPlugin'
+             'mpStarRatingPlugin'
            );
   }
   

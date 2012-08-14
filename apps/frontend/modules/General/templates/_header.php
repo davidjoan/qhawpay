@@ -7,7 +7,7 @@
                 <nav id="main-nav" class="grid_6">
                     <ul>
                         <li>
-                            <?php include_component( 'sfGoogleLogin', 'link' ); ?>
+                            <?php //include_component( 'sfGoogleLogin', 'link' ); ?>
                         </li>
                         <li>
                             <div id="social-register" class="registration_panel">

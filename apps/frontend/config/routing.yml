@@ -1,3 +1,7 @@
+login:
+  url:             /login
+  param:           { module: Log, action: login }
+
 ##############################
 ######### Default ############
 ##############################
@@ -6,7 +10,7 @@ panel_index:
   param:           { module: Panel, action: index }
 
 login_facebook:
-  url:             /login/facebook/*
+  url:             /facebook/*
   param:           { module: Log, action: loginFacebook }
 
 homepage:

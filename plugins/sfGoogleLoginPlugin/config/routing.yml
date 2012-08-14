@@ -1,7 +1,0 @@
-sfGoogleLogin_verify:
-    url:    /login
-    param:  { module: sfGoogleLogin, action: verify }
-    
-sfGoogleLogin_logout:
-    url:    /logout
-    param:  { module: sfGoogleLogin, action: logout }
