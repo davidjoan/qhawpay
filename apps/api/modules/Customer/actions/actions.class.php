@@ -12,7 +12,8 @@ class CustomerActions extends sfActions {
 
     public function executeLogin(sfWebRequest $request) {
         header('Access-Control-Allow-Origin: *');
-        if ($request->isMethod('post')) {
+        
+            $this->logMessage('info', $request->getParameterHolder()->getAll());
             $username = $request->getParameter("username");
             $password = $request->getParameter("password");
             $this->obj = Doctrine::getTable('Customer')->findOneByLowerCaseUsername($username);
@@ -20,7 +21,7 @@ class CustomerActions extends sfActions {
                 $this->feedback = "login incorrect";
                 $this->setTemplate('error');
             }
-        }
+        
     }
     
     public function executeRegister(sfWebRequest $request) {
